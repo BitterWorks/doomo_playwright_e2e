@@ -11,14 +11,8 @@ test('test', async ({ page }) => {
   // Go to https://staging.doomobr.com/admin/login
   await page.goto('https://staging.doomobr.com/admin/login');
 
-  // Click [placeholder="Email"]
-  await page.locator('[placeholder="Email"]').click();
-
   // Fill [placeholder="Email"]
   await page.locator('[placeholder="Email"]').fill('imendivil@doomobienesraices.com');
-
-  // Click [placeholder="Contraseña"]
-  await page.locator('[placeholder="Contraseña"]').click();
 
   // Fill [placeholder="Contraseña"]
   await page.locator('[placeholder="Contraseña"]').fill('Doomotja!9');
@@ -34,26 +28,14 @@ test('test', async ({ page }) => {
   // Click text=Nuevo Cliente
   await page.locator('text=Nuevo Cliente').click();
 
-  // Click [placeholder="Nombre\/s del cliente"]
-  await page.locator('[placeholder="Nombre\\/s del cliente"]').click();
-
   // Fill [placeholder="Nombre\/s del cliente"]
   await page.locator('[placeholder="Nombre\\/s del cliente"]').fill('prue');
-
-  // Click [placeholder="Apellido\/s del cliente"]
-  await page.locator('[placeholder="Apellido\\/s del cliente"]').click();
 
   // Fill [placeholder="Apellido\/s del cliente"]
   await page.locator('[placeholder="Apellido\\/s del cliente"]').fill('ba');
 
-  // Click [placeholder="Dirección de email"]
-  await page.locator('[placeholder="Dirección de email"]').click();
-
   // Fill [placeholder="Dirección de email"]
   await page.locator('[placeholder="Dirección de email"]').fill('prueba@mail.com');
-
-  // Click [placeholder="Número de teléfono"]
-  await page.locator('[placeholder="Número de teléfono"]').click();
 
   // Fill [placeholder="Número de teléfono"]
   await page.locator('[placeholder="Número de teléfono"]').fill('111111');
@@ -61,14 +43,8 @@ test('test', async ({ page }) => {
   // Fill [placeholder="Fecha de cumpleaños"]
   await page.locator('[placeholder="Fecha de cumpleaños"]').fill('2022-08-24');
 
-  // Click [placeholder="Número\/Dígitos del pasaporte"]
-  await page.locator('[placeholder="Número\\/Dígitos del pasaporte"]').click();
-
   // Fill [placeholder="Fecha de cumpleaños"]
   await page.locator('[placeholder="Fecha de cumpleaños"]').fill('2000-06-13');
-
-  // Click [placeholder="Número\/Dígitos del pasaporte"]
-  await page.locator('[placeholder="Número\\/Dígitos del pasaporte"]').click();
 
   // Fill [placeholder="Número\/Dígitos del pasaporte"]
   await page.locator('[placeholder="Número\\/Dígitos del pasaporte"]').fill('11111232');
@@ -76,23 +52,10 @@ test('test', async ({ page }) => {
   // Select AN
   await page.locator('select[name="passportCountryId"]').selectOption('AN');
 
-  // Click [placeholder="Ingrese un nro\. de CI "]
-  await page.locator('[placeholder="Ingrese un nro\\. de CI "]').click();
-
   // Fill [placeholder="Ingrese un nro\. de CI "]
   await page.locator('[placeholder="Ingrese un nro\\. de CI "]').fill('3333333');
-
-  // Click [placeholder="Ingrese un nro\. de NIT "]
-  await page.locator('[placeholder="Ingrese un nro\\. de NIT "]').click();
-
   // Fill [placeholder="Ingrese un nro\. de NIT "]
   await page.locator('[placeholder="Ingrese un nro\\. de NIT "]').fill('333333');
-
-  // Click text=Crear cliente
-  await page.locator('text=Crear cliente').click();
-
-  // Click [placeholder="Número de teléfono"]
-  await page.locator('[placeholder="Número de teléfono"]').click();
 
   // Fill [placeholder="Número de teléfono"]
   await page.locator('[placeholder="Número de teléfono"]').fill('111111111');
@@ -107,14 +70,8 @@ test('test', async ({ page }) => {
   // Click text=pruebaprueba@mail.comimendivil@doomobienesraices.com111111111 >> button >> nth=0
   await page.locator('text=pruebaprueba@mail.comimendivil@doomobienesraices.com111111111 >> button').first().click();
 
-  // Click [placeholder="Nombre\/s del cliente"]
-  await page.locator('[placeholder="Nombre\\/s del cliente"]').click();
-
   // Fill [placeholder="Nombre\/s del cliente"]
   await page.locator('[placeholder="Nombre\\/s del cliente"]').fill('pruedsa');
-
-  // Click [placeholder="Apellido\/s del cliente"]
-  await page.locator('[placeholder="Apellido\\/s del cliente"]').click();
 
   // Fill [placeholder="Apellido\/s del cliente"]
   await page.locator('[placeholder="Apellido\\/s del cliente"]').fill('badsa');
