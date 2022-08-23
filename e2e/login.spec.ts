@@ -8,17 +8,8 @@ test('test', async ({ page }) => {
   // Go to https://staging.doomobr.com/admin/login
   await page.goto('https://staging.doomobr.com/admin/login');
 
-  // Click [placeholder="Email"]
-  await page.locator('[placeholder="Email"]').click();
-
-  // Click [placeholder="Email"]
-  await page.locator('[placeholder="Email"]').click();
-
   // Fill [placeholder="Email"]
   await page.locator('[placeholder="Email"]').fill('imendivil@doomobienesraices.com');
-
-  // Click [placeholder="Contraseña"]
-  await page.locator('[placeholder="Contraseña"]').click();
 
   // Fill [placeholder="Contraseña"]
   await page.locator('[placeholder="Contraseña"]').fill('Doomotja!9');
@@ -26,7 +17,8 @@ test('test', async ({ page }) => {
   // Click button:has-text("Ingresá")
   await page.locator('button:has-text("Ingresá")').click();
   await expect(page).toHaveURL('https://staging.doomobr.com/admin');
-  await page.screenshot({ path: 'test-results/screenshot.png', fullPage: true });
+
+  // await page.screenshot({ path: 'test-results/screenshot.png', fullPage: true });
 
   // Click text=Pedidos
   await page.locator('text=Pedidos').click();
