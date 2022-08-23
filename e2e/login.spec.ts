@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { environment, login } from '../constants';
+import { login } from '../constants';
 
 
 test('test', async ({ page }) => {
@@ -43,7 +43,7 @@ test('test', async ({ page }) => {
   await expect(page).toHaveURL("/admin/agentes");
 
   // Click text=Cerrar Sesión
-  await page.locator('text=Cerrar Sesión').click();
-  await expect(page).toHaveURL("/admin/login");
+  // await page.locator('text=Cerrar Sesión').click();
+  // await expect(page).toHaveURL("/admin/login");
 
 });
