@@ -44,7 +44,7 @@ const config: PlaywrightTestConfig = {
     trace: 'on-first-retry',
 
     baseURL: process.env.BASE_URL,
-    storageState: `./e2e/state.json`,
+    storageState: `./config/storageState.json`,
   },
 
   /* Configure projects for major browsers */

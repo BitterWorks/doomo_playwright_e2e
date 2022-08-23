@@ -1,9 +1,11 @@
-import { test, expect } from '@playwright/test';
-import { login } from '../config/constants';
+import { test, expect, Page } from '@playwright/test';
+import { credentials } from '../config/constants';
 
 
-test('test', async ({ page }) => {
-  if (login.email && login.password) {
+// test('test', async ({ page }) => {
+async function login(page: Page) {
+
+  if (credentials.email && credentials.password) {
     // Go to https://staging.doomobr.com/admin/
     await page.goto('/admin');
 
@@ -11,10 +13,10 @@ test('test', async ({ page }) => {
     await page.goto("admin/login");
 
     // Fill [placeholder="Email"]
-    await page.locator('[placeholder="Email"]').fill(login.email);
+    await page.locator('[placeholder="Email"]').fill(credentials.email);
 
     // Fill [placeholder="Contraseña"]
-    await page.locator('[placeholder="Contraseña"]').fill(login.password);
+    await page.locator('[placeholder="Contraseña"]').fill(credentials.password);
 
     // Click button:has-text("Ingresá")
     await page.locator('button:has-text("Ingresá")').click();
@@ -46,5 +48,6 @@ test('test', async ({ page }) => {
     // await page.locator('text=Cerrar Sesión').click();
     // await expect(page).toHaveURL("/admin/login");
   }
+}
 
-});
+export default login;
