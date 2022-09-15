@@ -50,3 +50,32 @@ docker login -u AWS -p $(aws ecr get-login-password --region $AWS_DEFAULT_REGION
 docker build -t $AWS_REGISTRY_TEST_E2E   .
 docker push $AWS_REGISTRY_TEST_E2E
 ```
+
+
+# AWS S3
+
+## List s3 buckets
+```bash
+aws s3 ls
+```
+
+## List files in bucket
+```bash
+aws s3 ls s3://doomo-e2e-files/
+```
+
+## Upload folder to bucket
+```bash
+aws s3 cp e2e s3://doomo-e2e-files/ --recursive
+```
+
+## Get git branch into variable
+```bash
+export BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+echo $BRANCH
+```
+## Upload tests (pipeline)
+
+```bash
+aws s3 cp e2e s3://doomo-e2e-files/$BRANCH --recursive
+```
