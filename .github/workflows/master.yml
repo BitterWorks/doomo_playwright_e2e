@@ -20,4 +20,4 @@ jobs:
       - name: Path
         run: aws s3 ls
       - name: Push to S3
-        run: aws s3 cp e2e/ s3://doomo-e2e-files/${{ github.head_ref || github.ref_name }}  --recursive
+        run: aws s3 cp config s3://doomo-e2e-files/master  --recursive
