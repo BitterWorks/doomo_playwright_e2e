@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -20,5 +22,4 @@ jobs:
       - name: Path
         run: aws s3 ls
       - name: Push to S3
-        working-directory: 
-        run: aws s3 cp ../e2e s3://doomo-e2e-files/master  --recursive
+        run: aws s3 cp e2e s3://doomo-e2e-files/master  --recursive
