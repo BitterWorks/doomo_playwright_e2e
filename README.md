@@ -79,3 +79,24 @@ echo $BRANCH
 ```bash
 aws s3 cp e2e s3://doomo-e2e-files/$BRANCH --recursive
 ```
+
+## Download from s3
+
+```bash
+
+```
+
+
+## Run in Docker 
+
+```bash
+docker run -it -v $(pwd):/tests --rm --ipc=host mcr.microsoft.com/playwright:v1.25.0-focal /bin/bash
+cd tests
+npx playwright test
+```
+
+### Copy report from container to folder
+
+```bash
+docker cp 8fbe664eba65:/tests/playwright-report/ `pwd`/playwright-report/.
+```
