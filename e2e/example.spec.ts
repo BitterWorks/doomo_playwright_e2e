@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
+import login from './login.spec';
 
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
 test('test', async ({ page }) => {
-
+  await login(page, BASE_URL)
   // Go to`${BASE_URL}/
   await page.goto(BASE_URL);
 
