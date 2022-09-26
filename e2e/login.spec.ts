@@ -2,10 +2,14 @@ import { test, expect, Page } from '@playwright/test';
 import { credentials } from '../config/constants';
 
 
+const LOGIN_EMAIL = process.env.EMAIL
+const LOGIN_PASSWORD = process.env.PASSWORD
+
+
 // test('test', async ({ page }) => {
 async function login(page: Page, baseUrl) {
 
-  if (credentials.email && credentials.password) {
+  if (LOGIN_EMAIL && LOGIN_PASSWORD) {
     // Go to https://staging.doomobr.com/admin/
     await page.goto(`${baseUrl}/admin`);
 
@@ -13,10 +17,10 @@ async function login(page: Page, baseUrl) {
     await page.goto(`${baseUrl}/admin/login`);
 
     // Fill [placeholder="Email"]
-    await page.locator('[placeholder="Email"]').fill(credentials.email);
+    await page.locator('[placeholder="Email"]').fill(LOGIN_EMAIL);
 
     // Fill [placeholder="Contraseña"]
-    await page.locator('[placeholder="Contraseña"]').fill(credentials.password);
+    await page.locator('[placeholder="Contraseña"]').fill(LOGIN_PASSWORD);
 
     // Click button:has-text("Ingresá")
     await page.locator('button:has-text("Ingresá")').click();
