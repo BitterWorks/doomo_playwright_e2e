@@ -1,5 +1,4 @@
 import { test, expect, Page } from '@playwright/test';
-import { credentials } from '../config/constants';
 
 
 const LOGIN_EMAIL = process.env.EMAIL
