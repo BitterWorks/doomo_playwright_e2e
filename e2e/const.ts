@@ -1,6 +1,6 @@
 const clientExample: IClient = {
-    firstname: "Juan",
-    lastname: "Perez",
+    firstname: 'Juan',
+    lastname: 'Perez',
     email: 'juan@test.com',
     phone: '111111',
     birthday: '1999-07-07',

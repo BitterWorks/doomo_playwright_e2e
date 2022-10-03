@@ -39,9 +39,13 @@ async function createClient (page: Page, baseUrl: string, client: IClient) {
   // Click text=Crear cliente
   await page.locator('text=Crear cliente').click();
 
+  // Alert created client
+  await page.locator('div[role="alert"]:has-text("Éxito Cliente creado con éxito")').click();
+
   // Click [aria-label="Close"]
-  await page.locator('[aria-label="Close"]').click();
-  await expect(page).toHaveURL(`${baseUrl}/admin/clientes#close`);
+  // await page.locator('[aria-label="Close"]').click();
+  // await expect(page).toHaveURL(`${baseUrl}/admin/clientes#close`);
+  await expect(page).toHaveURL(`${baseUrl}/admin/clientes`);
 
 };
 
