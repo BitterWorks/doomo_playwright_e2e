@@ -27,29 +27,32 @@ async function login(page: Page, baseUrl) {
 
     // await page.screenshot({ path: 'test-results/screenshot.png', fullPage: true });
 
-    // Click text=Pedidos
-    await page.locator('text=Pedidos').click();
-    await expect(page).toHaveURL(`${baseUrl}/admin/pedidos`);
+    // // Click text=Pedidos
+    // await page.locator('text=Pedidos').click();
+    // await expect(page).toHaveURL(`${baseUrl}/admin/pedidos`);
 
-    // Click text=Clientes
-    await page.locator('text=Clientes').click();
-    await expect(page).toHaveURL(`${baseUrl}/admin/clientes`);
+    // // Click text=Clientes
+    // await page.locator('text=Clientes').click();
+    // await expect(page).toHaveURL(`${baseUrl}/admin/clientes`);
 
-    // Click text=Propiedades
-    await page.locator('text=Propiedades').click();
-    await expect(page).toHaveURL(`${baseUrl}/admin/propiedades`);
+    // // Click text=Propiedades
+    // await page.locator('text=Propiedades').click();
+    // await expect(page).toHaveURL(`${baseUrl}/admin/propiedades`);
 
-    // Click nav >> text=Publicaciones
-    await page.locator('nav >> text=Publicaciones').click();
-    await expect(page).toHaveURL(`${baseUrl}/admin/publicaciones`);
+    // // Click nav >> text=Publicaciones
+    // await page.locator('nav >> text=Publicaciones').click();
+    // await expect(page).toHaveURL(`${baseUrl}/admin/publicaciones`);
 
-    // Click text=Agentes
-    await page.locator('text=Agentes').click();
-    await expect(page).toHaveURL(`${baseUrl}/admin/agentes`);
+    // // Click text=Agentes
+    // await page.locator('text=Agentes').click();
+    // await expect(page).toHaveURL(`${baseUrl}/admin/agentes`);
 
-    // Click text=Cerrar Sesión
-    // await page.locator('text=Cerrar Sesión').click();
-    // await expect(page).toHaveURL("/admin/login");
+    // // Click text=Cerrar Sesión
+    // // await page.locator('text=Cerrar Sesión').click();
+    // // await expect(page).toHaveURL("/admin/login");
+  }
+  else {
+    console.log("Credentials not provided")
   }
 }
 
