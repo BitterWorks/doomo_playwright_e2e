@@ -1,6 +1,6 @@
 import { expect, Page } from '@playwright/test';
 
-async function createClient (page: Page, baseUrl: string) {
+async function createClient (page: Page, baseUrl: string, client: IClient) {
 
   // Click text=Clientes
   await page.locator('text=Clientes').click();
@@ -10,31 +10,31 @@ async function createClient (page: Page, baseUrl: string) {
   await page.locator('text=Nuevo Cliente').click();
 
   // Fill [placeholder="Nombre\/s del cliente"]
-  await page.locator('[placeholder="Nombre\\/s del cliente"]').fill('Juan');
+  await page.locator('[placeholder="Nombre\\/s del cliente"]').fill(client.firstname);
 
   // Fill [placeholder="Apellido\/s del cliente"]
-  await page.locator('[placeholder="Apellido\\/s del cliente"]').fill('Perez');
+  await page.locator('[placeholder="Apellido\\/s del cliente"]').fill(client.lastname);
 
   // Fill [placeholder="Dirección de email"]
-  await page.locator('[placeholder="Dirección de email"]').fill('juan@test.com');
+  await page.locator('[placeholder="Dirección de email"]').fill(client.email);
 
   // Fill [placeholder="Número de teléfono"]
-  await page.locator('[placeholder="Número de teléfono"]').fill('111111');
+  await page.locator('[placeholder="Número de teléfono"]').fill(client.phone);
 
   // Fill [placeholder="Fecha de cumpleaños"]
-  await page.locator('[placeholder="Fecha de cumpleaños"]').fill('1999-07-07');
+  await page.locator('[placeholder="Fecha de cumpleaños"]').fill(client.birthday);
 
   // Fill [placeholder="Número\/Dígitos del pasaporte"]
-  await page.locator('[placeholder="Número\\/Dígitos del pasaporte"]').fill('222222');
+  await page.locator('[placeholder="Número\\/Dígitos del pasaporte"]').fill(client.pasport);
 
   // Select BO
-  await page.locator('select[name="passportCountryId"]').selectOption('BO');
+  await page.locator('select[name="passportCountryId"]').selectOption(client.pasportCountry);
 
   // Fill [placeholder="Ingrese un nro\. de CI "]
-  await page.locator('[placeholder="Ingrese un nro\\. de CI "]').fill('333333');
+  await page.locator('[placeholder="Ingrese un nro\\. de CI "]').fill(client.identificationCard);
 
   // Fill [placeholder="Ingrese un nro\. de NIT "]
-  await page.locator('[placeholder="Ingrese un nro\\. de NIT "]').fill('444444');
+  await page.locator('[placeholder="Ingrese un nro\\. de NIT "]').fill(client.nit);
 
   // Click text=Crear cliente
   await page.locator('text=Crear cliente').click();

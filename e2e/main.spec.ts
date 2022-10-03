@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
-import createClient from './clientes/createClient.spec';
-import login from './login.spec';
+import createClient from './clientes/createClient';
+import login from './auth/login';
+import { clientExample } from './const';
 
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
@@ -9,7 +10,7 @@ test('test', async ({ page }) => {
   // Go to`${BASE_URL}/
   // await page.goto(`${BASE_URL}/admin`);
 
-  await createClient(page, BASE_URL)
+  await createClient(page, BASE_URL, clientExample)
 
   // // Click nav >> text=Publicaciones
   // await page.locator('nav >> text=Publicaciones').click();
