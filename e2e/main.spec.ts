@@ -6,6 +6,7 @@ import createProperty from './propiedades/createProperty';
 import removeClient from './clientes/removeClient';
 import createListing from './publicaciones/createListing';
 import logout from './auth/logout';
+import editClient from './clientes/editClient';
 
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
@@ -19,6 +20,7 @@ test.beforeEach(async ({ page }) => {
 
 test('create client', async ({ page }) => {
   await createClient(page, BASE_URL, clientExample)
+  await editClient(page, BASE_URL)
   await createProperty(page, BASE_URL, clientExample)
   await createListing(page, BASE_URL, clientExample)
 });
