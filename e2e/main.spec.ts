@@ -4,25 +4,25 @@ import login from './auth/login';
 import { clientExample } from './const';
 import createProperty from './propiedades/createProperty';
 import removeClient from './clientes/removeClient';
+import createListing from './publicaciones/createListing';
+import logout from './auth/logout';
 
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
 test.beforeEach(async ({ page }) => {
-  await login(page, BASE_URL)
+  const userEmail = process.env.EMAIL
+  const userPassword = process.env.PASSWORD
+  if (userEmail && userPassword)
+    await login(page, BASE_URL, userEmail, userPassword)
+  else { console.log('Invalid User Email'); return }
 })
 
 test('create client', async ({ page }) => {
   await createClient(page, BASE_URL, clientExample)
-  const userEmail = process.env.EMAIL
-  if (userEmail)
-    await createProperty(page, BASE_URL, clientExample, userEmail)
-  else { console.log('Invalid User Email'); return }
+  await createProperty(page, BASE_URL, clientExample)
+  await createListing(page, BASE_URL, clientExample)
 });
-
-// test('create property', async ({ page }) => {
-
-// })
-
 test.afterAll(async ({ page }) => {
   await removeClient(page, BASE_URL, clientExample)
+  await logout(page, BASE_URL)
 })
