@@ -7,6 +7,7 @@ import removeClient from './clientes/removeClient';
 import createListing from './publicaciones/createListing';
 import logout from './auth/logout';
 import editClient from './clientes/editClient';
+import editProperty from './propiedades/editProperty';
 
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
@@ -16,12 +17,17 @@ test.beforeEach(async ({ page }) => {
   if (userEmail && userPassword)
     await login(page, BASE_URL, userEmail, userPassword)
   else { console.log('Invalid User Email'); return }
+
+  // test.use({
+  //   storageState: 'auth.json'
+  // });
 })
 
 test('create client', async ({ page }) => {
   await createClient(page, BASE_URL, clientExample)
-  await editClient(page, BASE_URL)
+  await editClient(page, BASE_URL, clientExample)
   await createProperty(page, BASE_URL, clientExample)
+  await editProperty(page, BASE_URL, clientExample)
   await createListing(page, BASE_URL, clientExample)
 });
 test.afterAll(async ({ page }) => {

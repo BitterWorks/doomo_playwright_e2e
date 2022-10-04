@@ -31,11 +31,18 @@ Run CODEGEN
 npx playwright codegen staging.doomobr.com
 ```
 
-Run CODEGEN saving credentials
+CODEGEN save credentials
 
 ```
 npx playwright codegen localhost:3000 --save-storage=auth.json
 ```
+
+CODEGEN load credentials
+
+```
+npx playwright codegen localhost:3000 --load-storage=auth.json
+```
+
 
 
 Add screenshots 

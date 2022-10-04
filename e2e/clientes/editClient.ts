@@ -1,13 +1,14 @@
 import { expect, Page } from '@playwright/test';
+import { IClient } from '../interfaces.d';
 
-async function editClient(page: Page, baseUrl: string) {
+async function editClient(page: Page, baseUrl: string, client: IClient) {
 
   // Click text=Clientes
   await page.locator('a', {hasText:'Clientes'}).click();
   await expect(page).toHaveURL(`${baseUrl}/admin/clientes`);
 
   // Click text=JuanPerezjuan@test.comimendivil@doomobienesraices.com111111 >> button >> nth=0
-  await page.locator('text=JuanPerezjuan@test.comimendivil@doomobienesraices.com111111 >> button').first().click();
+  await page.locator(`text=${client.firstname}${client.lastname}${client.email} >> button`).first().click();
 
   // Fill [placeholder="Fecha de cumpleaños"]
   await page.locator('[placeholder="Fecha de cumpleaños"]').fill('1998-09-09');

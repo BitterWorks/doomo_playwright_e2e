@@ -1,4 +1,5 @@
 import { expect, Page } from '@playwright/test';
+import { IClient } from '../interfaces.d';
 
 async function createClient (page: Page, baseUrl: string, client: IClient) {
 

@@ -1,4 +1,4 @@
-interface IClient {
+export interface IClient {
     firstname: string
     lastname: string
     email: string
