@@ -1,13 +1,14 @@
 import { test, expect } from '@playwright/test';
 import createClient from './clientes/createClient';
 import login from './auth/login';
-import { clientExample } from './const';
+import { clientExample, listingExample, propertyExample } from './const';
 import createProperty from './propiedades/createProperty';
 import removeClient from './clientes/removeClient';
 import createListing from './publicaciones/createListing';
 import logout from './auth/logout';
 import editClient from './clientes/editClient';
 import editProperty from './propiedades/editProperty';
+import editListing from './publicaciones/editListing';
 
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
@@ -27,10 +28,11 @@ test('create client', async ({ page }) => {
   await createClient(page, BASE_URL, clientExample)
   await editClient(page, BASE_URL, clientExample)
   await createProperty(page, BASE_URL, clientExample)
-  await editProperty(page, BASE_URL, clientExample)
-  await createListing(page, BASE_URL, clientExample)
+  await editProperty(page, BASE_URL, propertyExample)
+  await createListing(page, BASE_URL, listingExample)
+  await editListing(page, BASE_URL, listingExample)
 });
-test.afterAll(async ({ page }) => {
-  await removeClient(page, BASE_URL, clientExample)
-  await logout(page, BASE_URL)
-})
+// test.afterAll(async ({ page }) => {
+//   await removeClient(page, BASE_URL, clientExample)
+//   await logout(page, BASE_URL)
+// })

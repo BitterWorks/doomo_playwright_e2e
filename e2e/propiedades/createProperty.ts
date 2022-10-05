@@ -25,7 +25,8 @@ async function createProperty(page: Page, baseUrl: string, client: IClient) {
 
   // Click [placeholder="Seleccionar"]
   await page.locator('[placeholder="Seleccionar"]').click();
-
+  
+  test.slow();
   // Click text=Cercado >> nth=1
   await page.locator('text=Cercado').click();
 

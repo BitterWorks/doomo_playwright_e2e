@@ -1,12 +1,12 @@
 import test, { expect, Page } from '@playwright/test';
-import { IClient } from '../interfaces.d';
+import { IClient, IProperty } from '../interfaces.d';
 
-async function editProperty(page: Page, baseUrl: string, client: IClient) {
+async function editProperty(page: Page, baseUrl: string, property: IProperty) {
 
     // Go to http://localhost:3000/admin
     await page.goto(`${baseUrl}/admin/propiedades`);
 
-    await page.locator('text=Juan PerezDepartamentoespaña 22La mejor casa >> button').first().click();
+    await page.locator(`text=${property.client.firstname} ${property.client.lastname}${property.propertyType}${property.address} >> button`).first().click();
 
     //   await page.locator(`text=${client.firstname} ${client.lastname} >> button`).first().click();
 

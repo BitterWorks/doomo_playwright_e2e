@@ -1,3 +1,5 @@
+import { IClient, IListing, IProperty } from "./interfaces.d"
+
 const clientExample: IClient = {
     firstname: 'Juan',
     lastname: 'Perez',
@@ -10,4 +12,18 @@ const clientExample: IClient = {
     nit: '4444'
 }
 
-export { clientExample }
+const propertyExample: IProperty = {
+    client: clientExample,
+    propertyType: "Departamento",
+    address: "españa 22"
+}
+
+const listingExample: IListing = {
+    property: propertyExample,
+    title: "Casa centro",
+    operation: "Compra",
+    currency: "US$",
+    description: "venta casa"
+}
+
+export { clientExample, propertyExample, listingExample }

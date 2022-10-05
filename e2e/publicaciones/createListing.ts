@@ -1,6 +1,7 @@
-import { test, expect, Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
+import { IListing } from '../interfaces.d';
 
-async function createListing(page: Page, baseUrl: string, client: IClient) {
+async function createListing(page: Page, baseUrl: string, listing: IListing) {
 
   // Click nav >> text=Publicaciones
   await page.locator('nav >> text=Publicaciones').click();
@@ -13,7 +14,7 @@ async function createListing(page: Page, baseUrl: string, client: IClient) {
   await page.locator('[placeholder="Seleccionar propiedad"]').click();
 
   // Click text=Juan Perez | Departamento | españa 22 | La mejor casa >> nth=1
-  await page.locator(`text=${client.firstname} ${client.lastname}`).nth(1).click();
+  await page.locator(`text=${listing.property.client.firstname} ${listing.property.client.lastname}`).nth(1).click();
 
   // Check text=Compra >> input[name="operationId"]
   await page.locator('text=Compra >> input[name="operationId"]').check();
@@ -25,10 +26,10 @@ async function createListing(page: Page, baseUrl: string, client: IClient) {
   await page.locator('input[name="price"]').fill('3333');
 
   // Fill input[name="title"]
-  await page.locator('input[name="title"]').fill('Casa centro');
+  await page.locator('input[name="title"]').fill(listing.title);
 
   // Fill textarea[name="description"]
-  await page.locator('textarea[name="description"]').fill('venta casa');
+  await page.locator('textarea[name="description"]').fill(listing.description);
 
   // Click text=Crear publicación
   await page.locator('text=Crear publicación').click();
