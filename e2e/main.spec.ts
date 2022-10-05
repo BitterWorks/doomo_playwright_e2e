@@ -32,7 +32,7 @@ test('create client', async ({ page }) => {
   await createListing(page, BASE_URL, listingExample)
   await editListing(page, BASE_URL, listingExample)
 });
-// test.afterAll(async ({ page }) => {
-//   await removeClient(page, BASE_URL, clientExample)
-//   await logout(page, BASE_URL)
-// })
+test.afterAll(async ({ page }) => {
+  await removeClient(page, BASE_URL, clientExample)
+  await logout(page, BASE_URL)
+})
