@@ -32,7 +32,6 @@ async function editListing(page: Page, baseUrl: string, listing: IListing) {
 
   // Click [aria-label="Close"]
   await page.locator('[aria-label="Close"]').click();
-  await expect(page).toHaveURL('http://localhost:3000/admin/publicaciones#close');
 }
 
 export default editListing
