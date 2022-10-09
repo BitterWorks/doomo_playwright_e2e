@@ -17,7 +17,7 @@ async function createListing(page: Page, baseUrl: string, listing: IListing) {
   await page.locator(`text=${listing.property.client.firstname} ${listing.property.client.lastname}`).nth(1).click();
 
   // Check text=Compra >> input[name="operationId"]
-  await page.locator('text=Compra >> input[name="operationId"]').check();
+  await page.locator('#properties >> text=Venta >> input[name="operationId"]').check();
 
   // Check text=US Dollar >> input[name="currencyCode"]
   await page.locator('text=US Dollar >> input[name="currencyCode"]').check();

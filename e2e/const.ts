@@ -21,7 +21,7 @@ const propertyExample: IProperty = {
 const listingExample: IListing = {
     property: propertyExample,
     title: "Casa centro",
-    operation: "Compra",
+    operation: "Venta",
     currency: "US$",
     description: "venta casa"
 }

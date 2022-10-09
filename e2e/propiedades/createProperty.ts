@@ -2,7 +2,7 @@ import test, { expect, Page } from '@playwright/test';
 import { IClient } from '../interfaces.d';
 
 async function createProperty(page: Page, baseUrl: string, client: IClient) {
-
+  test.slow()
   // Click text=Propiedades
   await page.locator('text=Propiedades').click();
   await expect(page).toHaveURL(`${baseUrl}/admin/propiedades`);
