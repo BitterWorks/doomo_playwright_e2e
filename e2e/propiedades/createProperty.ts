@@ -14,7 +14,7 @@ async function createProperty(page: Page, baseUrl: string, client: IClient) {
   await page.locator('[placeholder="Seleccionar cliente"]').click();
 
   // Click text=Juan, Perez, juan@test.com, imendivil@doomobienesraices.com, 111111 >> nth=1
-  await page.locator(`text=${client.firstname}, ${client.lastname}`).click();
+  await page.locator(`text=${client.firstname}, ${client.lastname}`).nth(1).click();
 //   await page.locator(`text=${client.firstname}, ${client.lastname}, ${client.email}, ${userEmail}, ${client.phone}`).nth(1).click();
 
   // Click [placeholder="Seleccionar"]

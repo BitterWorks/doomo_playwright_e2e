@@ -24,14 +24,30 @@ test.beforeEach(async ({ page }) => {
   // });
 })
 
-test('create client', async ({ page }) => {
+test('agent flow', async ({ page }) => {
   await createClient(page, BASE_URL, clientExample)
   await editClient(page, BASE_URL, clientExample)
   await createProperty(page, BASE_URL, clientExample)
   await editProperty(page, BASE_URL, propertyExample)
   await createListing(page, BASE_URL, listingExample)
   await editListing(page, BASE_URL, listingExample)
+  // portal que esta todo creado
 });
+
+// test('franchisee', async ({ page }) => {
+
+//   // mismos test que el agente + ver lo que creo el agente
+//   // portal que esta todo creado
+// })
+
+// test('roles', async ({ page }) => {
+//   // agente no puede ver lo que creo el franchisee
+// })
+
+// test('franchiser', async ({ page }) => {
+//   // 
+// })
+
 test.afterAll(async ({ page }) => {
   await removeClient(page, BASE_URL, clientExample)
   await logout(page, BASE_URL)

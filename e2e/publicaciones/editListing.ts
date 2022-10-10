@@ -12,17 +12,8 @@ async function editListing(page: Page, baseUrl: string, listing: IListing) {
   // Check text=Boliviano >> input[name="currencyCode"]
   await page.locator('text=Boliviano >> input[name="currencyCode"]').check();
 
-  // Click input[name="price"]
-  await page.locator('input[name="price"]').click();
-
-  // Double click input[name="price"]
-  await page.locator('input[name="price"]').dblclick();
-
   // Fill input[name="price"]
   await page.locator('input[name="price"]').fill('4444');
-
-  // Click textarea[name="description"]
-  await page.locator('textarea[name="description"]').click();
 
   // Fill textarea[name="description"]
   await page.locator('textarea[name="description"]').fill('venta casa hermosa');

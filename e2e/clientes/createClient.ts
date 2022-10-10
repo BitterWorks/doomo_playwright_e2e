@@ -1,14 +1,16 @@
 import { expect, Page } from '@playwright/test';
 import { IClient } from '../interfaces.d';
+import AdminNavbarPage, { Pages } from '../pages/admin-navbar-page';
+import ClientsPage from '../pages/clients-page';
 
 async function createClient (page: Page, baseUrl: string, client: IClient) {
-
+  const clientsPage = new ClientsPage(page)
+  const clientsNavBarPage = new AdminNavbarPage(page, baseUrl, Pages.Clientes)
   // Click text=Clientes
-  await page.locator('text=Clientes').click();
-  await expect(page).toHaveURL(`${baseUrl}/admin/clientes`);
-
-  // Click text=Nuevo Cliente
-  await page.locator('text=Nuevo Cliente').click();
+  console.log(clientsNavBarPage.url)
+  await clientsNavBarPage.selector.click();
+  await expect(page).toHaveURL(clientsNavBarPage.url)
+  await clientsPage.newClientButton.click()
 
   // Fill [placeholder="Nombre\/s del cliente"]
   await page.locator('[placeholder="Nombre\\/s del cliente"]').fill(client.firstname);
