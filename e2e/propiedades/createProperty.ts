@@ -3,85 +3,79 @@ import { IClient } from '../interfaces.d';
 import AdminNavbarPage, { Pages } from '../pages/admin-navbar-page';
 import PropiertiesPage from '../pages/properties-page';
 
-async function createProperty(page: Page, propertiesPage: PropiertiesPage, propertiesNavBarPage: AdminNavbarPage, client: IClient) {
-
+async function createProperty(propertiesPage: PropiertiesPage, propertiesNavBarPage: AdminNavbarPage) {
   
   await propertiesNavBarPage.selector.click();
-  await expect(page).toHaveURL(propertiesNavBarPage.url);
   await propertiesPage.newPropertyButton.click()
 
   // Click [placeholder="Seleccionar cliente"]
-  await page.locator('[placeholder="Seleccionar cliente"]').click();
+  await propertiesPage.clientSelect.click();
 
   // Click text=Juan, Perez, juan@test.com, imendivil@doomobienesraices.com, 111111 >> nth=1
-  await page.locator(`text=${client.firstname}, ${client.lastname}`).nth(1).click();
+  await propertiesPage.clientSelectOption.click();
 //   await page.locator(`text=${client.firstname}, ${client.lastname}, ${client.email}, ${userEmail}, ${client.phone}`).nth(1).click();
 
   // Click [placeholder="Seleccionar"]
-  await page.locator('[placeholder="Seleccionar"]').click();
+  await propertiesPage.aaliSelect.click();
 
   // Click text=Tarija >> nth=1
-  await page.locator('text=Tarija').click();
+  await propertiesPage.aali1Option.click();
 
   // Click [placeholder="Seleccionar"]
-  await page.locator('[placeholder="Seleccionar"]').click();
+  await propertiesPage.aaliSelect.click();
   
   test.slow();
   // Click text=Cercado >> nth=1
-  await page.locator('text=Cercado').click();
+  await propertiesPage.aali2Option.click();
 
   // Click [placeholder="Seleccionar"]
   test.slow();
-  await page.locator('[placeholder="Seleccionar"]').click();
+  await propertiesPage.aaliSelect.click();
   // Click text=Tarija >> nth=2
-  await page.locator('text=Tarija').nth(1).click();
+  await propertiesPage.aali3Option.click();
 
-  // Click [placeholder="Ingrese una dirección"]
-  await page.locator('[placeholder="Ingrese una dirección"]').click();
-
-  // Fill [placeholder="Ingrese una dirección"]
-  await page.locator('[placeholder="Ingrese una dirección"]').fill('españa 22');
+  await propertiesPage.addressInput.fill('españa 22');
 
   // Fill input[name="zip-code"]
-  await page.locator('input[name="zip-code"]').fill('222222');
+  await propertiesPage.zipCodeInput.fill('222222');
   
   // Fill input[name="surface"]
-  await page.locator('input[name="surface"]').fill('333');
+  await propertiesPage.surfaceInput.fill('333');
   
   // Click [placeholder="Seleccionar Tipo de Propiedad"]
-  await page.locator('[placeholder="Seleccionar Tipo de Propiedad"]').click();
+  await propertiesPage.properetyTypeInput.click();
   
   // Click text=Departamento >> nth=2
-  await page.locator('text=Departamento').nth(1).click();
+  await propertiesPage.propertyTypeOption.click();
   
   
   // await page.waitForSelector('text=Antiguedad >> input[type="number"]', { timeout: 100000 });
   test.slow();
   test.slow();
   // Fill text=Antiguedad (años) >> input[type="number"]
-  await page.locator('text=Antiguedad >> input[type="number"]').fill('2');
+  await propertiesPage.antiqueInput.fill('2');
   
   // Fill textarea[name="description"]
-  await page.locator('textarea[name="description"]').fill('La mejor casa');
+  await propertiesPage.descriptionInput.fill('La mejor casa');
 
   // Fill text=Superficie Cubierta (m2) >> input[type="number"]
-  await page.locator('text=Superficie Cubierta (m2) >> input[type="number"]').fill('333');
+  await propertiesPage.coveredSurfaceInput.fill('333');
 
   // Fill text=Dormitorios >> input[type="number"]
-  await page.locator('text=Dormitorios >> input[type="number"]').fill('2');
+  await propertiesPage.bedroomsInput.fill('2');
 
   // Check text=Piscina >> input[type="checkbox"]
-  await page.locator('text=Piscina >> input[type="checkbox"]').check();
+  await propertiesPage.poolCheckbox.check();
 
   // Check text=Cochera >> input[type="checkbox"]
-  await page.locator('text=Cochera >> input[type="checkbox"]').check();
+  await propertiesPage.garageCheckbox.check();
 
 
   // Click form >> text=Crear propiedad
-  await page.locator('form >> text=Crear propiedad').click();
+  await propertiesPage.createPropertyButton.click();
 
   // Click [aria-label="Close"]
-  await page.locator('[aria-label="Close"]').click();
+  await propertiesPage.closeModalButton.click();
   // await expect(page).toHaveURL(`${baseUrl}/admin/propiedades#close`);
 
 }
