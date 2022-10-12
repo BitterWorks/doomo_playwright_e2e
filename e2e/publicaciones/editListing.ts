@@ -1,10 +1,11 @@
 import { expect, Page } from '@playwright/test';
 import { IListing } from '../interfaces.d';
+import AdminNavbarPage from '../pages/admin-navbar-page';
+import ListingsPage from '../pages/listings-page';
 
-async function editListing(page: Page, baseUrl: string, listing: IListing) {
+async function editListing(page: Page, listignPage: ListingsPage, listingsNavBarPage: AdminNavbarPage, listing: IListing) {
 
-  // Go to http://localhost:3000/admin
-  await page.goto(`${baseUrl}/admin/publicaciones`);
+  await listingsNavBarPage.selector.click();
 
   // Click text=Casa centroCompraUS$3333venta casaimendivil@doomobienesraices.com >> button >> nth=0
   await page.locator(`text=${listing.title}${listing.operation}${listing.currency} >> button`).first().click();

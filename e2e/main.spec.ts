@@ -12,6 +12,7 @@ import editListing from './publicaciones/editListing';
 import PropiertiesPage from './pages/properties-page';
 import ClientsPage from './pages/clients-page';
 import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
+import ListingsPage from './pages/listings-page';
 
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
@@ -30,16 +31,18 @@ test.beforeEach(async ({ page }) => {
 test('agent flow', async ({ page }) => {
   const clientsPage = new ClientsPage(page)
   const propertiesPage = new PropiertiesPage(page)
+  const listingsPage = new ListingsPage(page)
 
   const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
   const propertiesNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Propiedades)
-
+  const listingsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Publicaciones)
+  
   await createClient(page, clientsPage, clientsNavBarPage, clientExample)
   await editClient(page, clientsPage, clientsNavBarPage, clientExample)
   await createProperty(page, propertiesPage, propertiesNavBarPage , clientExample)
   await editProperty(page, propertiesPage, propertiesNavBarPage , propertyExample)
-  await createListing(page, BASE_URL, listingExample)
-  await editListing(page, BASE_URL, listingExample)
+  await createListing(page, listingsPage, listingsNavBarPage, listingExample)
+  await editListing(page, listingsPage, listingsNavBarPage, listingExample)
   // portal que esta todo creado
 });
 

@@ -4,8 +4,8 @@ export enum Pages {
     // Inicio = 'home',
     Clientes = 'clients',
     Propiedades = 'properties',
+    Publicaciones = 'listings'
     // Documentos = 'documents',
-    // Publicaciones = 'listings'
 }
 
 interface PageAttributes {
@@ -18,7 +18,7 @@ interface NavBarPages {
     [Pages.Clientes]: PageAttributes
     [Pages.Propiedades]: PageAttributes
     // [Pages.Documentos]?: PageAttributes
-    // [Pages.Publicaciones]?: PageAttributes
+    [Pages.Publicaciones]: PageAttributes
 }
 
 const AdminPages: NavBarPages = {
@@ -29,6 +29,10 @@ const AdminPages: NavBarPages = {
     [Pages.Propiedades]: {
         buttonSelectorText: '[data-test=nav-properties]',
         url: '/admin/propiedades'
+    },
+    [Pages.Publicaciones]: {
+        buttonSelectorText: '[data-test=nav-listings]',
+        url: '/admin/publicaciones'
     },
 }
 

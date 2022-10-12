@@ -1,14 +1,13 @@
 import { expect, Page } from '@playwright/test';
 import { IListing } from '../interfaces.d';
+import AdminNavbarPage from '../pages/admin-navbar-page';
+import ListingsPage from '../pages/listings-page';
 
-async function createListing(page: Page, baseUrl: string, listing: IListing) {
+async function createListing(page: Page, listingPage: ListingsPage, listingsNavBarPage: AdminNavbarPage, listing: IListing) {
 
-  // Click nav >> text=Publicaciones
-  await page.locator('nav >> text=Publicaciones').click();
-  await expect(page).toHaveURL(`${baseUrl}/admin/publicaciones`);
-
-  // Click text=Nueva Publicación
-  await page.locator('text=Nueva Publicación').click();
+  await listingsNavBarPage.selector.click();
+  await expect(page).toHaveURL(listingsNavBarPage.url);
+  await listingPage.newListingButton.click()
 
   // Click [placeholder="Seleccionar propiedad"]
   await page.locator('[placeholder="Seleccionar propiedad"]').click();
