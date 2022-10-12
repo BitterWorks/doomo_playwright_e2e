@@ -1,10 +1,10 @@
 import { Page } from "@playwright/test";
 
 export enum Pages {
-    Inicio = 'home',
+    // Inicio = 'home',
     Clientes = 'clients',
+    Propiedades = 'properties',
     // Documentos = 'documents',
-    // Propiedades = 'properties',
     // Publicaciones = 'listings'
 }
 
@@ -14,22 +14,22 @@ interface PageAttributes {
 }
 
 interface NavBarPages {
-    [Pages.Inicio]: PageAttributes
+    // [Pages.Inicio]: PageAttributes
     [Pages.Clientes]: PageAttributes
+    [Pages.Propiedades]: PageAttributes
     // [Pages.Documentos]?: PageAttributes
-    // [Pages.Propiedades]?: PageAttributes
     // [Pages.Publicaciones]?: PageAttributes
 }
 
 const AdminPages: NavBarPages = {
-    [Pages.Inicio]: {
-        buttonSelectorText: 'text=Clientes',
+    [Pages.Clientes]: {
+        buttonSelectorText: '[data-test=nav-clients]',
         url: '/admin/clientes'
     },
-    [Pages.Clientes]: {
-        buttonSelectorText: 'text=Clientes',
-        url: '/admin/clientes'
-    }
+    [Pages.Propiedades]: {
+        buttonSelectorText: '[data-test=nav-properties]',
+        url: '/admin/propiedades'
+    },
 }
 
 class AdminNavbarPage {

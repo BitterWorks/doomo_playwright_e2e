@@ -1,12 +1,12 @@
 import { expect, Page } from '@playwright/test';
 import { IClient } from '../interfaces.d';
+import AdminNavbarPage from '../pages/admin-navbar-page';
+import ClientsPage from '../pages/clients-page';
 
-async function editClient(page: Page, baseUrl: string, client: IClient) {
+async function editClient(page: Page, clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage, client: IClient) {
 
-  // Click text=Clientes
-  await page.locator('a', {hasText:'Clientes'}).click();
-  await expect(page).toHaveURL(`${baseUrl}/admin/clientes`);
-
+  await clientsNavBarPage.selector.click();
+  
   // Click text=JuanPerezjuan@test.comimendivil@doomobienesraices.com111111 >> button >> nth=0
   await page.locator(`text=${client.firstname}${client.lastname}${client.email} >> button`).first().click();
 

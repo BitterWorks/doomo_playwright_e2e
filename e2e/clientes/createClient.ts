@@ -3,11 +3,8 @@ import { IClient } from '../interfaces.d';
 import AdminNavbarPage, { Pages } from '../pages/admin-navbar-page';
 import ClientsPage from '../pages/clients-page';
 
-async function createClient (page: Page, baseUrl: string, client: IClient) {
-  const clientsPage = new ClientsPage(page)
-  const clientsNavBarPage = new AdminNavbarPage(page, baseUrl, Pages.Clientes)
-  // Click text=Clientes
-  console.log(clientsNavBarPage.url)
+async function createClient (page: Page, clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage, client: IClient) {
+
   await clientsNavBarPage.selector.click();
   await expect(page).toHaveURL(clientsNavBarPage.url)
   await clientsPage.newClientButton.click()
@@ -44,12 +41,6 @@ async function createClient (page: Page, baseUrl: string, client: IClient) {
 
   // Alert created client
   await page.locator('div[role="alert"]:has-text("Éxito Cliente creado con éxito")').click();
-
-  // Click [aria-label="Close"]
-  // await page.locator('[aria-label="Close"]').click();
-  // await expect(page).toHaveURL(`${baseUrl}/admin/clientes#close`);
-  await expect(page).toHaveURL(`${baseUrl}/admin/clientes`);
-
 };
 
 export default createClient

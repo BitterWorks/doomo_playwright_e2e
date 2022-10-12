@@ -1,14 +1,14 @@
 import test, { expect, Page } from '@playwright/test';
 import { IClient } from '../interfaces.d';
+import AdminNavbarPage, { Pages } from '../pages/admin-navbar-page';
+import PropiertiesPage from '../pages/properties-page';
 
-async function createProperty(page: Page, baseUrl: string, client: IClient) {
-  test.slow()
-  // Click text=Propiedades
-  await page.locator('text=Propiedades').click();
-  await expect(page).toHaveURL(`${baseUrl}/admin/propiedades`);
+async function createProperty(page: Page, propertiesPage: PropiertiesPage, propertiesNavBarPage: AdminNavbarPage, client: IClient) {
 
-  // Click text=Crear Propiedad
-  await page.locator('text=Crear Propiedad').click();
+  
+  await propertiesNavBarPage.selector.click();
+  await expect(page).toHaveURL(propertiesNavBarPage.url);
+  await propertiesPage.newPropertyButton.click()
 
   // Click [placeholder="Seleccionar cliente"]
   await page.locator('[placeholder="Seleccionar cliente"]').click();

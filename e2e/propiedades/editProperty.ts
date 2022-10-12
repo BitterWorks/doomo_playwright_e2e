@@ -1,10 +1,11 @@
 import test, { expect, Page } from '@playwright/test';
 import { IClient, IProperty } from '../interfaces.d';
+import AdminNavbarPage, { Pages } from '../pages/admin-navbar-page';
+import PropiertiesPage from '../pages/properties-page';
 
-async function editProperty(page: Page, baseUrl: string, property: IProperty) {
+async function editProperty(page: Page, propertiesPage: PropiertiesPage, propertiesNavBarPage: AdminNavbarPage, property: IProperty) {
 
-    // Go to http://localhost:3000/admin
-    await page.goto(`${baseUrl}/admin/propiedades`);
+    await propertiesNavBarPage.selector.click();
 
     await page.locator(`text=${property.client.firstname} ${property.client.lastname}${property.propertyType}${property.address} >> button`).first().click();
 
