@@ -1,5 +1,10 @@
 import { IClient, IListing, IProperty } from "./interfaces.d"
 
+enum PropertieTypes {
+    DEPARTAMENTO = "Departamento"
+
+}
+
 const clientExample: IClient = {
     firstname: 'Juan',
     lastname: 'Perez',
@@ -12,8 +17,26 @@ const clientExample: IClient = {
     nit: '4444'
 }
 
+const editedClientExample: IClient = {
+    firstname: 'Juan',
+    lastname: 'Perez',
+    email: 'juan@test.com',
+    phone: '112222',
+    birthday: '1999-07-09',
+    pasport: '223333',
+    pasportCountry: 'BO',
+    identificationCard: '334444',
+    nit: '4455'
+}
+
 const propertyExample: IProperty = {
     client: clientExample,
+    propertyType: PropertieTypes.DEPARTAMENTO,
+    address: "españa 22"
+}
+
+const editedPropertyExample: IProperty = {
+    client: editedClientExample,
     propertyType: "Departamento",
     address: "españa 22"
 }
@@ -26,4 +49,12 @@ const listingExample: IListing = {
     description: "venta casa"
 }
 
-export { clientExample, propertyExample, listingExample }
+const editedListingExample: IListing = {
+    property: editedPropertyExample,
+    title: "Casa centro",
+    operation: "Venta",
+    currency: "US$",
+    description: "venta casa"
+}
+
+export { clientExample, propertyExample, listingExample, editedClientExample, editedPropertyExample, editedListingExample }

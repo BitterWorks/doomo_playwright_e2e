@@ -1,11 +1,13 @@
 import { Page } from "@playwright/test"
-
+import { IClient } from "../interfaces.d"
 class ClientsPage {
     readonly page: Page
+    readonly client: IClient
     // readonly url: string
 
-    constructor(page: Page) {
+    constructor(page: Page, client: IClient) {
         this.page = page
+        this.client = client
     }
 
     public get closeButton() {
@@ -16,16 +18,20 @@ class ClientsPage {
         return this.page.locator('[data-test=create-client-button]')
     }
 
-    public get createClientButton() {
+    public get createClientSubmitButton() {
         return this.page.locator('text=Crear cliente')
     }
 
-    public get editClientButton() {
+    public get editClientSubmitButton() {
         return this.page.locator('text=Actualizar cliente')
     }
 
     public get newClientAlert() {
         return this.page.locator('div[role="alert"]:has-text("Éxito Cliente creado con éxito")')
+    }
+
+    public get editClientButton() {
+        return this.page.locator(`text=${this.client.firstname}${this.client.lastname}${this.client.email} >> button`).first()
     }
 
     public get clientNameInput() {

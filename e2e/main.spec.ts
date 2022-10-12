@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import createClient from './clientes/createClient';
 import login from './auth/login';
-import { clientExample, listingExample, propertyExample } from './const';
+import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './const';
 import createProperty from './propiedades/createProperty';
 import removeClient from './clientes/removeClient';
 import createListing from './publicaciones/createListing';
@@ -29,7 +29,7 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('agent flow', async ({ page }) => {
-  const clientsPage = new ClientsPage(page)
+  const clientsPage = new ClientsPage(page, clientExample)
   const propertiesPage = new PropiertiesPage(page)
   const listingsPage = new ListingsPage(page)
 
@@ -37,12 +37,12 @@ test('agent flow', async ({ page }) => {
   const propertiesNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Propiedades)
   const listingsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Publicaciones)
   
-  await createClient(page, clientsPage, clientsNavBarPage, clientExample)
-  await editClient(page, clientsPage, clientsNavBarPage, clientExample)
-  await createProperty(page, propertiesPage, propertiesNavBarPage , clientExample)
-  await editProperty(page, propertiesPage, propertiesNavBarPage , propertyExample)
-  await createListing(page, listingsPage, listingsNavBarPage, listingExample)
-  await editListing(page, listingsPage, listingsNavBarPage, listingExample)
+  await createClient(clientsPage, clientsNavBarPage, clientExample)
+  await editClient(clientsPage, clientsNavBarPage, editedClientExample)
+  // await createProperty(page, propertiesPage, propertiesNavBarPage , clientExample)
+  // await editProperty(page, propertiesPage, propertiesNavBarPage , editedPropertyExample)
+  // await createListing(page, listingsPage, listingsNavBarPage, listingExample)
+  // await editListing(page, listingsPage, listingsNavBarPage, editedListingExample)
   // portal que esta todo creado
 });
 

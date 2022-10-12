@@ -1,4 +1,4 @@
-export interface IClient {
+interface IClient {
     firstname: string
     lastname: string
     email: string
@@ -10,16 +10,19 @@ export interface IClient {
     nit: string
 }
 
-export interface IProperty {
+interface IProperty {
     client: IClient
     propertyType: string
     address: string
 }
 
-export interface IListing {
+interface IListing {
     property: IProperty
     title: string
     operation: string
     currency: string
     description: string
 }
+
+
+export { IClient, IProperty, IListing }
