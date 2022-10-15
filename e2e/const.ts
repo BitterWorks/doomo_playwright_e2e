@@ -46,15 +46,17 @@ const listingExample: IListing = {
     title: "Casa centro",
     operation: "Venta",
     currency: "US$",
-    description: "venta casa"
+    description: "venta casa",
+    price: "800"
 }
 
 const editedListingExample: IListing = {
     property: editedPropertyExample,
     title: "Casa centro",
-    operation: "Venta",
+    operation: "Alquiler",
     currency: "US$",
-    description: "venta casa"
+    description: "alquiler casa",
+    price: "1000"
 }
 
 export { clientExample, propertyExample, listingExample, editedClientExample, editedPropertyExample, editedListingExample }

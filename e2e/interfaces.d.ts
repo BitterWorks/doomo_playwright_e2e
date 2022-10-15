@@ -22,6 +22,7 @@ interface IListing {
     operation: string
     currency: string
     description: string
+    price: string
 }
 
 

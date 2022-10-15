@@ -31,7 +31,7 @@ test.beforeEach(async ({ page }) => {
 test('agent flow', async ({ page }) => {
   const clientsPage = new ClientsPage(page, clientExample)
   const propertiesPage = new PropiertiesPage(page, propertyExample)
-  const listingsPage = new ListingsPage(page)
+  const listingsPage = new ListingsPage(page, listingExample)
 
   const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
   const propertiesNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Propiedades)
@@ -41,8 +41,8 @@ test('agent flow', async ({ page }) => {
   await editClient(clientsPage, clientsNavBarPage, editedClientExample)
   await createProperty(propertiesPage, propertiesNavBarPage)
   await editProperty(propertiesPage, propertiesNavBarPage)
-  // await createListing(page, listingsPage, listingsNavBarPage, listingExample)
-  // await editListing(page, listingsPage, listingsNavBarPage, editedListingExample)
+  await createListing(listingsPage, listingsNavBarPage, listingExample)
+  await editListing(listingsPage, listingsNavBarPage, listingExample, editedListingExample)
   // portal que esta todo creado
 });
 
