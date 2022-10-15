@@ -17,8 +17,8 @@ import ListingsPage from './pages/listings-page';
 const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
 
 test.beforeEach(async ({ page }) => {
-  const userEmail = process.env.EMAIL
-  const userPassword = process.env.PASSWORD
+  const userEmail = process.env.EMAIL_AGENT
+  const userPassword = process.env.PASSWORD_AGENT
   if (userEmail && userPassword)
     await login(page, BASE_URL, userEmail, userPassword)
   else { console.log('Invalid User Email'); return }
@@ -37,12 +37,15 @@ test('agent flow', async ({ page }) => {
   const propertiesNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Propiedades)
   const listingsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Publicaciones)
   
-  await createClient(clientsPage, clientsNavBarPage, clientExample)
-  await editClient(clientsPage, clientsNavBarPage, editedClientExample)
+  await createClient(clientsPage, clientsNavBarPage)
+  clientsPage.client = editedClientExample
+  await editClient(clientsPage, clientsNavBarPage)
   await createProperty(propertiesPage, propertiesNavBarPage)
+  propertiesPage.property = editedPropertyExample
   await editProperty(propertiesPage, propertiesNavBarPage)
-  await createListing(listingsPage, listingsNavBarPage, listingExample)
-  await editListing(listingsPage, listingsNavBarPage, listingExample, editedListingExample)
+  await createListing(listingsPage, listingsNavBarPage)
+  listingsPage.listing = editedListingExample
+  await editListing(listingsPage, listingsNavBarPage)
   // portal que esta todo creado
 });
 

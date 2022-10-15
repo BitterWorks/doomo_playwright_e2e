@@ -2,7 +2,7 @@ import { Page } from "@playwright/test"
 import { IClient } from "../interfaces.d"
 class ClientsPage {
     readonly page: Page
-    readonly client: IClient
+    client: IClient
     // readonly url: string
 
     constructor(page: Page, client: IClient) {

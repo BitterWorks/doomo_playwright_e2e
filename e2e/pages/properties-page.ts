@@ -3,7 +3,7 @@ import { IProperty } from "../interfaces.d"
 
 class PropiertiesPage {
     readonly page: Page
-    readonly property: IProperty
+    property: IProperty
 
     constructor(page: Page, property: IProperty) {
         this.page = page
