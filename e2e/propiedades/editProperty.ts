@@ -2,9 +2,7 @@ import AdminNavbarPage from '../pages/admin-navbar-page';
 import PropiertiesPage from '../pages/properties-page';
 
 async function editProperty(propertiesPage: PropiertiesPage, propertiesNavBarPage: AdminNavbarPage) {
-
     await propertiesNavBarPage.selector.click()
-
     await propertiesPage.editPropertyButton.click()
     await propertiesPage.zipCodeInput.fill('333333')
     await propertiesPage.pitSaleCheckbox.check()
