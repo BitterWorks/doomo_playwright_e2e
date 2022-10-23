@@ -1,9 +1,6 @@
-import { IClient, IListing, IProperty } from "./interfaces.d"
+import { IClient, IListing, IProperty, PropertyTypes } from "./interfaces.d"
 
-enum PropertieTypes {
-    DEPARTAMENTO = "Departamento"
 
-}
 
 const clientExample: IClient = {
     firstname: 'Juan',
@@ -31,14 +28,20 @@ const editedClientExample: IClient = {
 
 const propertyExample: IProperty = {
     client: clientExample,
-    propertyType: PropertieTypes.DEPARTAMENTO,
-    address: "españa 22"
+    propertyType: PropertyTypes.DEPARTAMENTO,
+    address: "españa 22",
+    zipCode: "22222",
+    surface: "320",
+    description: "hermoso departamento..."
 }
 
 const editedPropertyExample: IProperty = {
     client: editedClientExample,
-    propertyType: "Departamento",
-    address: "españa 22"
+    propertyType: PropertyTypes.CASA,
+    address: "españa 222",
+    zipCode: "33333",
+    surface: "420",
+    description: "hermosa casa..."
 }
 
 const listingExample: IListing = {

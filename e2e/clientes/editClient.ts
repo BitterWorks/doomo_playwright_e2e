@@ -2,28 +2,28 @@ import { IClient } from '../interfaces.d';
 import AdminNavbarPage from '../pages/admin-navbar-page';
 import ClientsPage from '../pages/clients-page';
 
-async function editClient(clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage) {
+async function editClient(clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage, editedClientsPage: ClientsPage) {
 
   await clientsNavBarPage.selector.click();
   
   // Click text=JuanPerezjuan@test.comimendivil@doomobienesraices.com111111 >> button >> nth=0
   await clientsPage.editClientButton.click();
 
-  await clientsPage.clientNameInput.fill(clientsPage.client.firstname);
-  await clientsPage.clientLastnameInput.fill(clientsPage.client.lastname);
-  await clientsPage.clientEmailInput.fill(clientsPage.client.email);
-  await clientsPage.clientPhoneInput.fill(clientsPage.client.phone);
-  await clientsPage.clientBirthdateInput.fill(clientsPage.client.birthday);
-  await clientsPage.clientPassportInput.fill(clientsPage.client.pasport);
-  await clientsPage.clientCountryInput.selectOption(clientsPage.client.pasportCountry);
-  await clientsPage.clientCIInput.fill(clientsPage.client.identificationCard);
-  await clientsPage.clientNITInput.fill(clientsPage.client.nit);
+  await editedClientsPage.clientNameInput.fill(editedClientsPage.client.firstname);
+  await editedClientsPage.clientLastnameInput.fill(editedClientsPage.client.lastname);
+  await editedClientsPage.clientEmailInput.fill(editedClientsPage.client.email);
+  await editedClientsPage.clientPhoneInput.fill(editedClientsPage.client.phone);
+  await editedClientsPage.clientBirthdateInput.fill(editedClientsPage.client.birthday);
+  await editedClientsPage.clientPassportInput.fill(editedClientsPage.client.pasport);
+  await editedClientsPage.clientCountryInput.selectOption(editedClientsPage.client.pasportCountry);
+  await editedClientsPage.clientCIInput.fill(editedClientsPage.client.identificationCard);
+  await editedClientsPage.clientNITInput.fill(editedClientsPage.client.nit);
 
   // Click text=Actualizar cliente
-  await clientsPage.editClientSubmitButton.click();
+  await editedClientsPage.editClientSubmitButton.click();
 
   // Click [aria-label="Close"]
-  await clientsPage.closeButton.click();
+  await editedClientsPage.closeButton.click();
 };
 
 export default editClient

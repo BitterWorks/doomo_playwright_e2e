@@ -1,16 +1,19 @@
 import AdminNavbarPage from '../pages/admin-navbar-page';
 import PropiertiesPage from '../pages/properties-page';
 
-async function editProperty(propertiesPage: PropiertiesPage, propertiesNavBarPage: AdminNavbarPage) {
+async function editProperty(propertiesPage: PropiertiesPage, propertiesNavBarPage: AdminNavbarPage, editedPropertiesPage: PropiertiesPage) {
     await propertiesNavBarPage.selector.click()
     await propertiesPage.editPropertyButton.click()
-    await propertiesPage.zipCodeInput.fill('333333')
-    await propertiesPage.pitSaleCheckbox.check()
-    await propertiesPage.grillCheckbox.check()
-    await propertiesPage.poolCheckbox.uncheck()
-    await propertiesPage.bedroomsInput.fill('3')
-    await propertiesPage.editPropertySubmitButton.click()
-    await propertiesPage.closeModalButton.click()
+    await editedPropertiesPage.addressInput.fill(editedPropertiesPage.property.address)
+    await editedPropertiesPage.zipCodeInput.fill(editedPropertiesPage.property.zipCode)
+    await editedPropertiesPage.surfaceInput.fill(editedPropertiesPage.property.surface)
+    await editedPropertiesPage.descriptionInput.fill(editedPropertiesPage.property.description)
+    await editedPropertiesPage.pitSaleCheckbox.check()
+    await editedPropertiesPage.grillCheckbox.check()
+    await editedPropertiesPage.poolCheckbox.uncheck()
+    await editedPropertiesPage.bedroomsInput.fill('3')
+    await editedPropertiesPage.editPropertySubmitButton.click()
+    await editedPropertiesPage.closeModalButton.click()
 }
 
 export default editProperty

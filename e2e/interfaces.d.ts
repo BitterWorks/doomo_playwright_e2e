@@ -12,8 +12,11 @@ interface IClient {
 
 interface IProperty {
     client: IClient
-    propertyType: string
+    propertyType: PropertyTypes
     address: string
+    zipCode: string
+    surface: string
+    description: string
 }
 
 interface IListing {
@@ -23,6 +26,17 @@ interface IListing {
     currency: string
     description: string
     price: string
+}
+
+export enum PropertyTypes {
+    TERRENO= "Terreno",
+    CAMPO= "Campo",
+    COCHERA="Cochera",
+    OFICINA="Oficina",
+    CASA="Casa",
+    DEPARTAMENTO="Departamento",
+    LOCAL_COMERCIAL="Local Comercial",
+    OTRO="Otro"
 }
 
 
