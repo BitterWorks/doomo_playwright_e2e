@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test"
-import { IListing } from "../interfaces.d"
+import { IListing } from "../config/interfaces"
 
 class ListingsPage{
     readonly page: Page

@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test"
-import { IProperty } from "../interfaces.d"
+import { IProperty } from "../config/interfaces"
 
 class PropiertiesPage {
     readonly page: Page
@@ -18,8 +18,13 @@ class PropiertiesPage {
         return this.page.locator('[placeholder="Seleccionar cliente"]')
     }
 
+//   await page.locator('text=Franchesee, Client, franchesee@test.com, franchisee@doomobr.com, 2223333').nth(1).click();
     public get clientSelectOption() {
-        return this.page.locator(`text=${this.property.client.firstname}, ${this.property.client.lastname}`).nth(1)
+        return this.page.locator(`text=${this.property.client.firstname}, ${this.property.client.lastname}, ${this.property.client.email}`).nth(1)
+    }
+
+    public get clientSelectOptionN() {
+        return this.page.locator(`text=${this.property.client.firstname}, ${this.property.client.lastname}, ${this.property.client.email}`)
     }
 
     public get aaliSelect() {

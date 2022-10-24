@@ -29,24 +29,8 @@ export default function createTests() {
       // });
     })
 
-    test('agent flow', async ({ page }) => {
-      const clientsPage = new ClientsPage(page, clientExample)
-      const propertiesPage = new PropiertiesPage(page, propertyExample)
-      const listingsPage = new ListingsPage(page, listingExample)
-
-      const editedClientsPage = new ClientsPage(page, editedClientExample)
-      const editedPropertiesPage = new PropiertiesPage(page, editedPropertyExample)
-      const editedListingsPage = new ListingsPage(page, editedListingExample)
-
-      const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
-      const propertiesNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Propiedades)
-      const listingsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Publicaciones)
-
-      await createClient(clientsPage, clientsNavBarPage)
-      await editClient(clientsPage, clientsNavBarPage, editedClientsPage)
-      await createProperty(propertiesPage, propertiesNavBarPage)
-      await editProperty(propertiesPage, propertiesNavBarPage, editedPropertiesPage)
-      await createListing(listingsPage, listingsNavBarPage)
-      await editListing(listingsPage, listingsNavBarPage, editedListingsPage)
-    });
+    test('agent delete',async ({ page }) => {
+      await removeClient(page, BASE_URL, clientExample)
+      await logout(page, BASE_URL)
+    })
 }

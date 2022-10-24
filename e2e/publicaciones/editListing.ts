@@ -1,5 +1,5 @@
 import { expect, Page } from '@playwright/test';
-import { IListing } from '../interfaces.d';
+import { IListing } from '../config/interfaces';
 import AdminNavbarPage from '../pages/admin-navbar-page';
 import ListingsPage from '../pages/listings-page';
 

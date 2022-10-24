@@ -1,4 +1,4 @@
-import { IClient } from '../interfaces.d';
+import { IClient } from '../config/interfaces';
 import AdminNavbarPage from '../pages/admin-navbar-page';
 import ClientsPage from '../pages/clients-page';
 

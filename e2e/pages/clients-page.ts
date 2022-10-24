@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test"
-import { IClient } from "../interfaces.d"
+import { IClient } from "../config/interfaces"
 class ClientsPage {
     readonly page: Page
     client: IClient

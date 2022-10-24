@@ -1,5 +1,5 @@
 import { expect, Page } from '@playwright/test';
-import { IClient } from '../interfaces.d';
+import { IClient } from '../config/interfaces';
 
 async function removeClient (page: Page, baseUrl: string, client: IClient) {
    

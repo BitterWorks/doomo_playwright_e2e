@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import createClient from './clientes/createClient';
 import login from './auth/login';
-import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './config/agentConsts';
+import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './config/francheseeConsts';
 import createProperty from './propiedades/createProperty';
 import removeClient from './clientes/removeClient';
 import createListing from './publicaciones/createListing';
@@ -18,8 +18,8 @@ import ListingsPage from './pages/listings-page';
 export default function createTests() {
     const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
     test.beforeEach(async ({ page }) => {
-      const userEmail = process.env.EMAIL_AGENT
-      const userPassword = process.env.PASSWORD_AGENT
+      const userEmail = process.env.EMAIL_FRANCHISEE
+      const userPassword = process.env.PASSWORD_FRANCHISEE
       if (userEmail && userPassword)
         await login(page, BASE_URL, userEmail, userPassword)
       else { console.log('Invalid User Email'); return }
@@ -29,7 +29,7 @@ export default function createTests() {
       // });
     })
 
-    test('agent flow', async ({ page }) => {
+    test('franchesee flow', async ({ page }) => {
       const clientsPage = new ClientsPage(page, clientExample)
       const propertiesPage = new PropiertiesPage(page, propertyExample)
       const listingsPage = new ListingsPage(page, listingExample)
