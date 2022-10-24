@@ -1,0 +1,29 @@
+{
+  "cookies": [
+    {
+      "name": "__cf_bm",
+      "value": "dWMNwAcyrRsPhA7q2WsvELar.ITpZOZiQp0H1zLMNCg-1666569572-0-AXFgsiEKVr/VHEE5F1o8IP01YJ6RgeLTJ8oufqQTUxH4Vex780ZkiggKOyLH78k4c6+ZgPuMzh1vnXT8hK2y894=",
+      "domain": ".pixabay.com",
+      "path": "/",
+      "expires": 1666571371.964249,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://localhost:3000",
+      "localStorage": [
+        {
+          "name": "auth-token",
+          "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjY1Njk4NzAsIm9yaWdJYXQiOjE2NjY1Njk1NzAsImVtYWlsIjoiZnJhbmNoaXNlZUBkb29tb2JyLmNvbSJ9.hVxRKG5x5bdSkuV59knqz4wJnB-uCsshotZh5N9CBBw"
+        },
+        {
+          "name": "country",
+          "value": "{\"code\":\"BO\",\"name\":\"Bolivia\"}"
+        }
+      ]
+    }
+  ]
+}
