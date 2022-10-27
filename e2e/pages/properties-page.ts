@@ -18,7 +18,7 @@ class PropiertiesPage {
         return this.page.locator('[placeholder="Seleccionar cliente"]')
     }
 
-//   await page.locator('text=Franchesee, Client, franchesee@test.com, franchisee@doomobr.com, 2223333').nth(1).click();
+//   await page.locator('text=franchisee, Client, franchisee@test.com, franchisee@doomobr.com, 2223333').nth(1).click();
     public get clientSelectOption() {
         return this.page.locator(`text=${this.property.client.firstname}, ${this.property.client.lastname}, ${this.property.client.email}`).nth(1)
     }

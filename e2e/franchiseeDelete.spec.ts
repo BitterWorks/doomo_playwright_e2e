@@ -29,7 +29,7 @@ export default function createTests() {
     // });
   })
 
-    test('franchesee delete',async ({ page }) => {
+    test('franchisee delete',async ({ page }) => {
       await removeClient(page, BASE_URL, clientExample)
       await logout(page, BASE_URL)
     })

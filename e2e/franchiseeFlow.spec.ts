@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import createClient from './clientes/createClient';
 import login from './auth/login';
-import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './config/francheseeConsts';
+import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './config/franchiseeConsts';
 import createProperty from './propiedades/createProperty';
 import removeClient from './clientes/removeClient';
 import createListing from './publicaciones/createListing';
@@ -29,7 +29,7 @@ export default function createTests() {
       // });
     })
 
-    test('franchesee flow', async ({ page }) => {
+    test('franchisee flow', async ({ page }) => {
       const clientsPage = new ClientsPage(page, clientExample)
       const propertiesPage = new PropiertiesPage(page, propertyExample)
       const listingsPage = new ListingsPage(page, listingExample)

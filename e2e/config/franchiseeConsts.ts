@@ -1,9 +1,9 @@
 import { IClient, IListing, IProperty, PropertyTypes } from "./interfaces"
 
 const clientExample: IClient = {
-    firstname: 'Franchesee',
+    firstname: 'Franchisee',
     lastname: 'Client',
-    email: 'franchesee@test.com',
+    email: 'franchisee@test.com',
     phone: '22222',
     birthday: '1999-07-07',
     pasport: '222222',
@@ -13,9 +13,9 @@ const clientExample: IClient = {
 }
 
 const editedClientExample: IClient = {
-    firstname: 'Franchesee',
+    firstname: 'Franchisee',
     lastname: 'Client',
-    email: 'franchesee@test.com',
+    email: 'franchisee@test.com',
     phone: '2223333',
     birthday: '1999-07-09',
     pasport: '223333',
