@@ -13,6 +13,7 @@ import PropiertiesPage from './pages/properties-page';
 import ClientsPage from './pages/clients-page';
 import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
 import ListingsPage from './pages/listings-page';
+import validateClient from './clientes/validateClient';
 
 
 export default function createTests() {

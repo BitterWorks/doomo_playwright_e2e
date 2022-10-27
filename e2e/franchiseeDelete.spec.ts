@@ -1,18 +1,8 @@
-import { test, expect } from '@playwright/test';
-import createClient from './clientes/createClient';
+import { test } from '@playwright/test';
 import login from './auth/login';
-import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './config/agentConsts';
-import createProperty from './propiedades/createProperty';
 import removeClient from './clientes/removeClient';
-import createListing from './publicaciones/createListing';
 import logout from './auth/logout';
-import editClient from './clientes/editClient';
-import editProperty from './propiedades/editProperty';
-import editListing from './publicaciones/editListing';
-import PropiertiesPage from './pages/properties-page';
-import ClientsPage from './pages/clients-page';
-import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
-import ListingsPage from './pages/listings-page';
+import { editedClientExample } from './config/franchiseeConsts';
 
 
 export default function createTests() {
@@ -29,8 +19,8 @@ export default function createTests() {
     // });
   })
 
-    test('franchisee delete',async ({ page }) => {
-      await removeClient(page, BASE_URL, clientExample)
-      await logout(page, BASE_URL)
-    })
+  test('franchisee delete', async ({ page }) => {
+    await removeClient(page, BASE_URL, editedClientExample)
+    await logout(page, BASE_URL)
+  })
 }

@@ -5,10 +5,7 @@ import ClientsPage from '../pages/clients-page';
 async function editClient(clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage, editedClientsPage: ClientsPage) {
 
   await clientsNavBarPage.selector.click();
-  
-  // Click text=JuanPerezjuan@test.comimendivil@doomobienesraices.com111111 >> button >> nth=0
   await clientsPage.editClientButton.click();
-
   await editedClientsPage.clientNameInput.fill(editedClientsPage.client.firstname);
   await editedClientsPage.clientLastnameInput.fill(editedClientsPage.client.lastname);
   await editedClientsPage.clientEmailInput.fill(editedClientsPage.client.email);

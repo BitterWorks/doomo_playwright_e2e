@@ -34,13 +34,13 @@ npx playwright codegen staging.doomobr.com
 CODEGEN save credentials
 
 ```
-npx playwright codegen localhost:3000 --save-storage=authAgent.json
+npx playwright codegen localhost:3000/admin --save-storage=authAgent.json
 ```
 
 CODEGEN load credentials
 
 ```
-npx playwright codegen localhost:3000 --load-storage=authAgent.json
+npx playwright codegen localhost:3000/admin --load-storage=authAgent.json
 ```
 
 
