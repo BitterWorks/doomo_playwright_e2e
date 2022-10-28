@@ -35,7 +35,7 @@ const propertyExample: IProperty = {
 
 const editedPropertyExample: IProperty = {
     client: editedClientExample,
-    propertyType: PropertyTypes.CASA,
+    propertyType: PropertyTypes.DEPARTAMENTO,
     address: "españa 222",
     zipCode: "33333",
     surface: "420",
