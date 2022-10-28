@@ -16,7 +16,6 @@ async function login(page: Page, baseUrl, userEmail: string, userPassword) {
 
   // Click button:has-text("Ingresá")
   await page.locator('button:has-text("Ingresá")').click();
-  await expect(page).toHaveURL(`${baseUrl}/admin`);
 }
 
 export default login;

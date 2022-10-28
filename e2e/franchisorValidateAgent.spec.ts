@@ -12,8 +12,8 @@ import validateListing from './publicaciones/validateListing';
 export default function createTests() {
   const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
   test.beforeEach(async ({ page }) => {
-    const userEmail = process.env.EMAIL_FRANCHISEE
-    const userPassword = process.env.PASSWORD_FRANCHISEE
+    const userEmail = process.env.EMAIL_FRANCHISOR
+    const userPassword = process.env.PASSWORD_FRANCHISOR
     if (userEmail && userPassword)
       await login(page, BASE_URL, userEmail, userPassword)
     else { console.log('Invalid User Email'); return }
@@ -23,7 +23,7 @@ export default function createTests() {
     // });
   })
 
-  test('franchisee validate agent', async ({ page }) => {
+  test('franchisor validate agent', async ({ page }) => {
     // client
     const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
     const editedClientsPage = new ClientsPage(page, editedAgentClient)
