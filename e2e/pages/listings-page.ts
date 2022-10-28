@@ -64,6 +64,15 @@ class ListingsPage{
         return this.page.locator(`dialog >> text=${this.listing.operation}`)
     }
 
+    // Validate
+    public get otherAgentsCheckBox() {
+        return this.page.locator('input[type="checkbox"]')
+    }
+  
+    public get filterApplyButton() {
+        return this.page.locator('text=Aplicar filtros')
+    }
+
 }
 
 export default ListingsPage
