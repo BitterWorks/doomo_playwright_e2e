@@ -11,10 +11,10 @@ import createProperty from './propiedades/createProperty';
 import editProperty from './propiedades/editProperty';
 import createListing from './publicaciones/createListing';
 import editListing from './publicaciones/editListing';
+import { BASE_URL } from '../config/config';
 
 
 export default function createTests() {
-    const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
     test.beforeEach(async ({ page }) => {
       const userEmail = process.env.EMAIL_AGENT
       const userPassword = process.env.PASSWORD_AGENT

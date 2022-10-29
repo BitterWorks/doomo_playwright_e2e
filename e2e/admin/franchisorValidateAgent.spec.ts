@@ -8,9 +8,9 @@ import ListingsPage from './pages/listings-page';
 import PropiertiesPage from './pages/properties-page';
 import validateProperty from './propiedades/validateProperty';
 import validateListing from './publicaciones/validateListing';
+import { BASE_URL } from '../config/config';
 
 export default function createTests() {
-  const BASE_URL = process.env.BASE_URL || "https://staging.doomobr.com"
   test.beforeEach(async ({ page }) => {
     const userEmail = process.env.EMAIL_FRANCHISOR
     const userPassword = process.env.PASSWORD_FRANCHISOR
