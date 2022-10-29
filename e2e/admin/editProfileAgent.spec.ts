@@ -7,9 +7,6 @@ export default function createTests() {
     test.beforeEach(async ({ page }) => {
         const userEmail = process.env.EMAIL_AGENT
         const userPassword = process.env.PASSWORD_AGENT
-        console.log(BASE_URL)
-        console.log(userEmail)
-        console.log(userPassword)
         if (userEmail && userPassword)
             await login(page, BASE_URL, userEmail, userPassword)
         else { console.log('Invalid User Email'); return }
