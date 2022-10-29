@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import login from './auth/login';
 import createClient from './clientes/createClient';
 import editClient from './clientes/editClient';
-import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './config/franchiseeConsts';
+import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from '../config/franchiseeConsts';
 import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
 import ClientsPage from './pages/clients-page';
 import ListingsPage from './pages/listings-page';

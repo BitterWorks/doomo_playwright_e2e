@@ -1,12 +1,12 @@
 import { test } from "@playwright/test"
 
-import agentFlow from './agentFlow.spec'
-import agentDelete from './agentDelete.spec'
-import franchiseeFlow from './franchiseeFlow.spec'
-import franchiseeDelete from './franchiseeDelete.spec'
-import franchiseeValidateAgent from './franchiseeValidateAgent.spec'
-import franchisorValidateAgent from './franchisorValidateAgent.spec'
-import franchisorValidateFranchisee from './franchisorValidateFranchisee.spec'
+import agentFlow from './admin/agentFlow.spec'
+import agentDelete from './admin/agentDelete.spec'
+import franchiseeFlow from './admin/franchiseeFlow.spec'
+import franchiseeDelete from './admin/franchiseeDelete.spec'
+import franchiseeValidateAgent from './admin/franchiseeValidateAgent.spec'
+import franchisorValidateAgent from './admin/franchisorValidateAgent.spec'
+import franchisorValidateFranchisee from './admin/franchisorValidateFranchisee.spec'
 
 test.describe(agentFlow)
 test.describe(franchiseeFlow)

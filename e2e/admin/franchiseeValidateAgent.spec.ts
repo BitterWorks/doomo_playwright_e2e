@@ -1,7 +1,7 @@
 import { test } from '@playwright/test';
 import login from './auth/login';
 import validateClient from './clientes/validateClient';
-import { editedClientExample as editedAgentClient, editedListingExample, editedPropertyExample as editedAgentProperty } from './config/agentConsts';
+import { editedClientExample as editedAgentClient, editedListingExample, editedPropertyExample as editedAgentProperty } from '../config/agentConsts';
 import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
 import ClientsPage from './pages/clients-page';
 import ListingsPage from './pages/listings-page';

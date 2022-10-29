@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import login from './auth/login';
 import removeClient from './clientes/removeClient';
 import logout from './auth/logout';
-import { editedClientExample } from './config/franchiseeConsts';
+import { editedClientExample } from '../config/franchiseeConsts';
 
 
 export default function createTests() {

@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
 import login from './auth/login';
-import { editedClientExample } from './config/agentConsts';
+import { editedClientExample } from '../config/agentConsts';
 import removeClient from './clientes/removeClient';
 import logout from './auth/logout';
 
