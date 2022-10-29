@@ -1,5 +1,5 @@
-import AdminNavbarPage from '../../pages/admin-navbar-page';
-import PropiertiesPage from '../../pages/properties-page';
+import AdminNavbarPage from '../pages/admin-navbar-page';
+import PropiertiesPage from '../pages/properties-page';
 
 async function validateProperty(propertiesNavBarPage: AdminNavbarPage, editedPropertiesPage: PropiertiesPage) {
     await propertiesNavBarPage.selector.click()

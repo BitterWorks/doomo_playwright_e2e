@@ -1,5 +1,5 @@
-import AdminNavbarPage from '../../pages/admin-navbar-page';
-import ListingsPage from '../../pages/listings-page';
+import AdminNavbarPage from '../pages/admin-navbar-page';
+import ListingsPage from '../pages/listings-page';
 
 async function validateListing(listingsNavBarPage: AdminNavbarPage, editedListingsPage: ListingsPage) {
 

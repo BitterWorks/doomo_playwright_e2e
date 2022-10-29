@@ -1,18 +1,16 @@
-import { test, expect } from '@playwright/test';
-import createClient from './clientes/createClient';
+import { test } from '@playwright/test';
 import login from './auth/login';
-import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from './config/agentConsts';
-import createProperty from './propiedades/createProperty';
-import removeClient from './clientes/removeClient';
-import createListing from './publicaciones/createListing';
-import logout from './auth/logout';
+import createClient from './clientes/createClient';
 import editClient from './clientes/editClient';
-import editProperty from './propiedades/editProperty';
-import editListing from './publicaciones/editListing';
-import PropiertiesPage from './pages/properties-page';
-import ClientsPage from './pages/clients-page';
+import { clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample } from '../config/agentConsts';
 import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
+import ClientsPage from './pages/clients-page';
 import ListingsPage from './pages/listings-page';
+import PropiertiesPage from './pages/properties-page';
+import createProperty from './propiedades/createProperty';
+import editProperty from './propiedades/editProperty';
+import createListing from './publicaciones/createListing';
+import editListing from './publicaciones/editListing';
 
 
 export default function createTests() {
