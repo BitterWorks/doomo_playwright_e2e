@@ -1,3 +1,8 @@
+interface IProfile {
+    firstname: string
+    lastname: string
+    phone: string
+}
 interface IClient {
     firstname: string
     lastname: string
@@ -40,4 +45,4 @@ export enum PropertyTypes {
 }
 
 
-export { IClient, IProperty, IListing }
+export { IClient, IProperty, IListing, IProfile }

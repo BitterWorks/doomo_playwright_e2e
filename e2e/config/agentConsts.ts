@@ -1,4 +1,11 @@
-import { IClient, IListing, IProperty, PropertyTypes } from "./interfaces"
+import { IClient, IListing, IProfile, IProperty, PropertyTypes } from "./interfaces"
+
+
+const profile: IProfile = {
+    firstname: "AgentName",
+    lastname: "AgentLastname",
+    phone: "777777"
+}
 
 const clientExample: IClient = {
     firstname: 'Agent',
@@ -60,4 +67,4 @@ const editedListingExample: IListing = {
     price: "1000"
 }
 
-export { clientExample, propertyExample, listingExample, editedClientExample, editedPropertyExample, editedListingExample }
+export { clientExample, propertyExample, listingExample, editedClientExample, editedPropertyExample, editedListingExample, profile }
