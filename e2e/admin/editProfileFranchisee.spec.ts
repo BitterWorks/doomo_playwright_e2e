@@ -5,8 +5,8 @@ import login from './auth/login';
 
 export default function createTests() {
     test.beforeEach(async ({ page }) => {
-        const userEmail = process.env.EMAIL_AGENT
-        const userPassword = process.env.PASSWORD_AGENT
+        const userEmail = process.env.EMAIL_FRANCHISEE
+        const userPassword = process.env.PASSWORD_FRANCHISEE
         console.log(BASE_URL)
         console.log(userEmail)
         console.log(userPassword)
@@ -19,7 +19,7 @@ export default function createTests() {
         // });
     })
 
-    test('edit profile agent', async ({ page }) => {
+    test('edit profile franchisee', async ({ page }) => {
         await page.locator('#editProfile').click();
         await page.locator('[placeholder="Nombre"]').fill(profile.firstname);
         await page.locator('[placeholder="Apellido"]').fill(profile.lastname);

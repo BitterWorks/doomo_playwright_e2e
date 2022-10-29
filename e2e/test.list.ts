@@ -1,5 +1,7 @@
 import { test } from "@playwright/test"
 
+import editProfileAgent from './admin/editProfileAgent.spec'
+import editProfileFranchisee from './admin/editProfileFranchisee.spec'
 import agentFlow from './admin/agentFlow.spec'
 import agentDelete from './admin/agentDelete.spec'
 import franchiseeFlow from './admin/franchiseeFlow.spec'
@@ -10,6 +12,8 @@ import franchisorValidateFranchisee from './admin/franchisorValidateFranchisee.s
 import home from './portal/home'
 
 // Admin
+test.describe(editProfileAgent)
+test.describe(editProfileFranchisee)
 test.describe(agentFlow)
 test.describe(franchiseeFlow)
 test.describe(franchiseeValidateAgent)
