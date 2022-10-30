@@ -1,6 +1,13 @@
-import { IClient, IListing, IProperty, PropertyTypes } from "./interfaces"
+import { IClient, IListing, IProfile, IProperty, PropertyTypes } from "./interfaces"
 
-const clientExample: IClient = {
+const profile: IProfile = {
+    firstname: "AgentName",
+    lastname: "AgentLastname",
+    phone: "777777"
+}
+
+
+const franchiseeClientExample: IClient = {
     firstname: 'Franchisee',
     lastname: 'Client',
     email: 'franchisee@test.com',
@@ -12,7 +19,7 @@ const clientExample: IClient = {
     nit: '4444'
 }
 
-const editedClientExample: IClient = {
+const franchiseeEditedClientExample: IClient = {
     firstname: 'Franchisee',
     lastname: 'Client',
     email: 'franchisee@test.com',
@@ -24,8 +31,8 @@ const editedClientExample: IClient = {
     nit: '4455'
 }
 
-const propertyExample: IProperty = {
-    client: clientExample,
+const franchiseePropertyExample: IProperty = {
+    client: franchiseeClientExample,
     propertyType: PropertyTypes.DEPARTAMENTO,
     address: "españa 22",
     zipCode: "22222",
@@ -33,8 +40,8 @@ const propertyExample: IProperty = {
     description: "hermoso departamento..."
 }
 
-const editedPropertyExample: IProperty = {
-    client: editedClientExample,
+const franchiseeEditedPropertyExample: IProperty = {
+    client: franchiseeEditedClientExample,
     propertyType: PropertyTypes.CASA,
     address: "españa 222",
     zipCode: "33333",
@@ -42,8 +49,8 @@ const editedPropertyExample: IProperty = {
     description: "hermosa casa..."
 }
 
-const listingExample: IListing = {
-    property: propertyExample,
+const franchiseeListingExample: IListing = {
+    property: franchiseePropertyExample,
     title: "Casa centro",
     operation: "Venta",
     currency: "US$",
@@ -51,8 +58,8 @@ const listingExample: IListing = {
     price: "800"
 }
 
-const editedListingExample: IListing = {
-    property: editedPropertyExample,
+const franchiseeEditedListingExample: IListing = {
+    property: franchiseeEditedPropertyExample,
     title: "Casa centro",
     operation: "Alquiler",
     currency: "US$",
@@ -60,4 +67,7 @@ const editedListingExample: IListing = {
     price: "1000"
 }
 
-export { clientExample, propertyExample, listingExample, editedClientExample, editedPropertyExample, editedListingExample }
+export { 
+    franchiseeClientExample, franchiseePropertyExample, franchiseeListingExample, 
+    franchiseeEditedClientExample, franchiseeEditedPropertyExample, 
+    franchiseeEditedListingExample, profile }
