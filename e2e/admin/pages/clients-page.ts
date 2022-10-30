@@ -34,6 +34,10 @@ class ClientsPage {
         return this.page.locator(`text=${this.client.firstname}${this.client.lastname}${this.client.email} >> button`).first()
     }
 
+    public get removeClientButton() {
+        return this.page.locator(`text=${this.client.firstname}${this.client.lastname}${this.client.email} >> button`).nth(1)
+    }
+
     public get clientNameInput() {
         return this.page.locator('[placeholder="Nombre\\/s del cliente"]')
     }

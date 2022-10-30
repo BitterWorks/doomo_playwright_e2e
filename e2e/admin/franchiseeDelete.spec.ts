@@ -4,6 +4,8 @@ import removeClient from './clientes/removeClient';
 import logout from './auth/logout';
 import { editedClientExample } from '../config/franchiseeConsts';
 import { BASE_URL } from '../config/config';
+import ClientsPage from './pages/clients-page';
+import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
 
 
 export default function createTests() {
@@ -20,7 +22,9 @@ export default function createTests() {
   })
 
   test('franchisee delete', async ({ page }) => {
-    await removeClient(page, BASE_URL, editedClientExample)
-    await logout(page, BASE_URL)
+    const editedClientsPage = new ClientsPage(page, editedClientExample)
+    const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
+
+    await removeClient(editedClientsPage, clientsNavBarPage)
   })
 }
