@@ -15,7 +15,7 @@ test.describe('agent', async () => {
         await expect(page.locator('text=Doomo Admin')).toBeVisible({ timeout: 60000 })
     })
 
-    test('agent delete', async ({ page }) => {
+    test('delete', async ({ page }) => {
         const editedClientsPage = new ClientsPage(page, editedClientExample)
         const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
 
@@ -32,7 +32,7 @@ test.describe('franchisee', async () => {
         await expect(page.locator('text=Doomo Admin')).toBeVisible({ timeout: 60000 })
     })
 
-    test('franchisee delete', async ({ page }) => {
+    test('delete', async ({ page }) => {
         const editedClientsPage = new ClientsPage(page, editedClientExample)
         const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
 

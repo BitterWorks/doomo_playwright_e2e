@@ -1,3 +1,13 @@
+Test Order
+
+```
+npx playwright test login.spec.ts --headed
+npx playwright test editProfile.spec.ts --headed
+npx playwright test generalFlow.spec.ts --headed
+npx playwright test validation.spec.ts --headed
+npx playwright test delete.spec.ts --headed
+```
+
 Run all tests
 
 ```bash

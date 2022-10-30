@@ -19,7 +19,7 @@ test.describe('franchisee', async () => {
         await expect(page.locator('text=Doomo Admin')).toBeVisible({ timeout: 60000 })
     })
 
-    test('franchisee validation', async ({ page }) => {
+    test('validate client', async ({ page }) => {
         const clientsNavBarPage = new AdminNavbarPage(page, BASE_URL, Pages.Clientes)
         const editedClientsPage = new ClientsPage(page, editedAgentClient)
       

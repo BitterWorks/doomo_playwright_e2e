@@ -6,7 +6,7 @@ import { profile as franchiseeProfile } from '../config/franchiseeConsts';
 
 test.describe('agent', async () => {
     test.use({
-        storageState: 'authFranchisee.json'
+        storageState: 'authAgent.json'
     })
     test.beforeEach(async ({ page }) => {
         await page.goto(`${BASE_URL}/admin`);
@@ -25,7 +25,7 @@ test.describe('agent', async () => {
 })
 
 
-test.describe('agent', async () => {
+test.describe('franchisee', async () => {
     test.use({
         storageState: 'authFranchisee.json'
     })
