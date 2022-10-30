@@ -1,24 +1,18 @@
-import { test } from '@playwright/test';
-import login from './auth/login';
-import removeClient from './clientes/removeClient';
-import logout from './auth/logout';
-import { editedClientExample } from '../config/franchiseeConsts';
+import { expect, test } from '@playwright/test';
 import { BASE_URL } from '../config/config';
-import ClientsPage from './pages/clients-page';
+import { editedClientExample } from '../config/franchiseeConsts';
+import removeClient from './clientes/removeClient';
 import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
+import ClientsPage from './pages/clients-page';
 
 
 export default function createTests() {
+  test.use({
+    storageState: 'authAgent.json'
+  })
   test.beforeEach(async ({ page }) => {
-    const userEmail = process.env.EMAIL_FRANCHISEE
-    const userPassword = process.env.PASSWORD_FRANCHISEE
-    if (userEmail && userPassword)
-      await login(page, BASE_URL, userEmail, userPassword)
-    else { console.log('Invalid User Email'); return }
-
-    // test.use({
-    //   storageState: 'auth.json'
-    // });
+    await page.goto(`${BASE_URL}/admin`);
+    await expect(page.locator('text=Doomo Admin')).toBeVisible({ timeout: 60000 })
   })
 
   test('franchisee delete', async ({ page }) => {

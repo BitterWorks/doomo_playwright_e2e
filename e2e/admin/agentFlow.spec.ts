@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import login from './auth/login';
 import createClient from './clientes/createClient';
 import editClient from './clientes/editClient';
@@ -15,17 +15,13 @@ import { BASE_URL } from '../config/config';
 
 
 export default function createTests() {
-    test.beforeEach(async ({ page }) => {
-      const userEmail = process.env.EMAIL_AGENT
-      const userPassword = process.env.PASSWORD_AGENT
-      if (userEmail && userPassword)
-        await login(page, BASE_URL, userEmail, userPassword)
-      else { console.log('Invalid User Email'); return }
-
-      // test.use({
-      //   storageState: 'auth.json'
-      // });
-    })
+  test.use({
+    storageState: 'authAgent.json'
+  })
+  test.beforeEach(async ({ page }) => {
+    await page.goto(`${BASE_URL}/admin`);
+    await expect(page.locator('text=Doomo Admin')).toBeVisible({timeout:60000})
+  })
 
     test('agent flow', async ({ page }) => {
       const clientsPage = new ClientsPage(page, clientExample)

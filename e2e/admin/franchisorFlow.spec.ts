@@ -1,10 +1,10 @@
-import { test } from '@playwright/test';
-import login from './auth/login';
-import createClient from './clientes/createClient';
-import editClient from './clientes/editClient';
+import { expect, test } from '@playwright/test';
+import { BASE_URL } from '../config/config';
 import {
   clientExample, editedClientExample, editedListingExample, editedPropertyExample, listingExample, propertyExample
 } from '../config/franchisorConsts';
+import createClient from './clientes/createClient';
+import editClient from './clientes/editClient';
 import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
 import ClientsPage from './pages/clients-page';
 import ListingsPage from './pages/listings-page';
@@ -13,20 +13,15 @@ import createProperty from './propiedades/createProperty';
 import editProperty from './propiedades/editProperty';
 import createListing from './publicaciones/createListing';
 import editListing from './publicaciones/editListing';
-import { BASE_URL } from '../config/config';
 
 
 export default function createTests() {
+  test.use({
+    storageState: 'authAgent.json'
+  })
   test.beforeEach(async ({ page }) => {
-    const userEmail = process.env.EMAIL_FRANCHISOR
-    const userPassword = process.env.PASSWORD_FRANCHISOR
-    if (userEmail && userPassword)
-      await login(page, BASE_URL, userEmail, userPassword)
-    else { console.log('Invalid User Email'); return }
-
-    // test.use({
-    //   storageState: 'auth.json'
-    // });
+    await page.goto(`${BASE_URL}/admin`);
+    await expect(page.locator('text=Doomo Admin')).toBeVisible({ timeout: 60000 })
   })
 
   test('superadmin flow', async ({ page }) => {

@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import login from './auth/login';
 import { editedClientExample } from '../config/agentConsts';
 import removeClient from './clientes/removeClient';
@@ -9,17 +9,13 @@ import AdminNavbarPage, { Pages } from './pages/admin-navbar-page';
 
 
 export default function createTests() {
-    test.beforeEach(async ({ page }) => {
-      const userEmail = process.env.EMAIL_AGENT
-      const userPassword = process.env.PASSWORD_AGENT
-      if (userEmail && userPassword)
-        await login(page, BASE_URL, userEmail, userPassword)
-      else { console.log('Invalid User Email'); return }
-
-      // test.use({
-      //   storageState: 'auth.json'
-      // });
-    })
+  test.use({
+    storageState: 'authAgent.json'
+  })
+  test.beforeEach(async ({ page }) => {
+    await page.goto(`${BASE_URL}/admin`);
+    await expect(page.locator('text=Doomo Admin')).toBeVisible({timeout:60000})
+  })
 
     test('agent delete',async ({ page }) => {
       const editedClientsPage = new ClientsPage(page, editedClientExample)

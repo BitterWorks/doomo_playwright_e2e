@@ -1,19 +1,14 @@
 import { expect, test } from '@playwright/test';
 import { profile } from '../config/agentConsts';
 import { BASE_URL } from '../config/config';
-import login from './auth/login';
 
 export default function createTests() {
+    test.use({
+        storageState: 'authAgent.json'
+    })
     test.beforeEach(async ({ page }) => {
-        const userEmail = process.env.EMAIL_AGENT
-        const userPassword = process.env.PASSWORD_AGENT
-        if (userEmail && userPassword)
-            await login(page, BASE_URL, userEmail, userPassword)
-        else { console.log('Invalid User Email'); return }
-
-        // test.use({
-        //   storageState: 'auth.json'
-        // });
+        await page.goto(`${BASE_URL}/admin`);
+        await expect(page.locator('text=Doomo Admin')).toBeVisible({ timeout: 60000 })
     })
 
     test('edit profile agent', async ({ page }) => {

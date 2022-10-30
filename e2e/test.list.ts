@@ -3,6 +3,8 @@ import { test } from "@playwright/test"
 import editProfileAgent from './admin/editProfileAgent.spec'
 import editProfileFranchisee from './admin/editProfileFranchisee.spec'
 import agentLogin from './admin/agentLogin.spec'
+import franchiseeLogin from './admin/franchiseeLogin.spec'
+import franchisorLogin from './admin/franchisorLogin.spec'
 import agentFlow from './admin/agentFlow.spec'
 import agentDelete from './admin/agentDelete.spec'
 import franchiseeFlow from './admin/franchiseeFlow.spec'
@@ -18,13 +20,15 @@ import home from './portal/home'
 
 // Login
 test.describe(agentLogin)
+test.describe(franchiseeLogin)
+test.describe(franchisorLogin)
 
 // Admin
 // test.describe(editProfileAgent)
 // test.describe(editProfileFranchisee)
 
-test.describe(agentFlow)
-test.describe(franchiseeFlow)
+// test.describe(agentFlow)
+// test.describe(franchiseeFlow)
 
 // NO VE NADA SUS PROPIOS CLIENTES
 // test.describe(franchisorFlow)
@@ -45,6 +49,6 @@ test.describe(franchiseeFlow)
 // test.describe(franchiseeDelete)
 
 // Fixtures
-test.describe(agentCreateMultipleClients)
+// test.describe(agentCreateMultipleClients)
 // test.describe(agentCreateMultipleProperties)
 // test.describe(agentCreateMultipleListings)

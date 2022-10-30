@@ -3,8 +3,7 @@ import AdminNavbarPage, { Pages } from '../pages/admin-navbar-page';
 import ClientsPage from '../pages/clients-page';
 
 async function createClient (clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage) {
-
-  await clientsNavBarPage.selector.click();
+  await clientsNavBarPage.selector.click()
   await clientsPage.newClientButton.click()
 
   await clientsPage.clientNameInput.fill(clientsPage.client.firstname);
@@ -18,7 +17,7 @@ async function createClient (clientsPage: ClientsPage, clientsNavBarPage: AdminN
   await clientsPage.clientNITInput.fill(clientsPage.client.nit);
   await clientsPage.createClientSubmitButton.click()
 
-  await clientsPage.newClientAlert.click();
+  await clientsPage.closeButton.click();
 };
 
 export default createClient
