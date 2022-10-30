@@ -9,13 +9,15 @@ import franchiseeDelete from './admin/franchiseeDelete.spec'
 import franchiseeValidateAgent from './admin/franchiseeValidateAgent.spec'
 import franchisorValidateAgent from './admin/franchisorValidateAgent.spec'
 import franchisorValidateFranchisee from './admin/franchisorValidateFranchisee.spec'
+import agentCreateMultipleListings from './admin/agentCreateMultipleListings.spec'
 import home from './portal/home'
 
 // Admin
-test.describe(editProfileAgent)
-test.describe(editProfileFranchisee)
+// test.describe(editProfileAgent)
+// test.describe(editProfileFranchisee)
 test.describe(agentFlow)
 test.describe(franchiseeFlow)
+test.describe(agentCreateMultipleListings)
 test.describe(franchiseeValidateAgent)
 test.describe(franchisorValidateAgent)
 test.describe(franchisorValidateFranchisee)
