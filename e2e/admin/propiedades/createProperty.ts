@@ -8,12 +8,11 @@ async function createProperty(propertiesPage: PropiertiesPage, propertiesNavBarP
   await propertiesPage.clientSelect.click();
   await propertiesPage.clientSelectOption.click();
   await propertiesPage.aaliSelect.click();
-  await propertiesPage.aali1Option.click();
-  // await propertiesPage.aaliSelect.click();  
-  // test.slow();
-  // await propertiesPage.aali2Option.click();
-  // test.slow();
-  // await propertiesPage.aaliSelect.click();
+  await propertiesPage.aaliOption(0, 1).click();
+  await propertiesPage.aaliSelect.click();
+  await propertiesPage.aaliOption(1, 1).click();
+  await propertiesPage.aaliSelect.click();
+  await propertiesPage.aaliOption(2, 1).click();
   // await propertiesPage.aali3Option.click();
   // await propertiesPage.addressInput.fill(propertiesPage.property.address);
   await propertiesPage.zipCodeInput.fill(propertiesPage.property.zipCode);  

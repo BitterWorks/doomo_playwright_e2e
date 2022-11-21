@@ -1,13 +1,14 @@
 import { Page } from "@playwright/test"
-import { IClient } from "../../config/interfaces"
+import { Country, IClient } from "../../config/interfaces"
 class ClientsPage {
     readonly page: Page
     client: IClient
-    // readonly url: string
+    country: Country
 
-    constructor(page: Page, client: IClient) {
+    constructor(page: Page, client: IClient, country: Country) {
         this.page = page
         this.client = client
+        this.country = country
     }
 
     public get closeButton() {
@@ -66,12 +67,12 @@ class ClientsPage {
         return this.page.locator('select[name="passportCountryId"]')
     }
 
-    public get clientCIInput() {
-        return this.page.locator('[placeholder="Ingrese un nro\\. de CI "]')
+    public get clientNationalIdInput() {
+        return this.page.locator(`[placeholder="Ingrese un nro\\. de ${this.country.nationalIdName} "]`)
     }
 
-    public get clientNITInput() {
-        return this.page.locator('[placeholder="Ingrese un nro\\. de NIT "]')
+    public get clientTaxIdInput() {
+        return this.page.locator(`[placeholder="Ingrese un nro\\. de ${this.country.taxIdName} "]`)
     }
 }
 

@@ -2,7 +2,7 @@ import { IListing } from '../../config/interfaces';
 import AdminNavbarPage from '../pages/admin-navbar-page';
 import ListingsPage from '../pages/listings-page';
 
-async function createListing(listingPage: ListingsPage, listingsNavBarPage: AdminNavbarPage) {
+async function createListing(listingPage: ListingsPage, listingsNavBarPage: AdminNavbarPage, page: any) {
 
   await listingsNavBarPage.selector.click();
   await listingPage.newListingButton.click();

@@ -1,13 +1,14 @@
 import { Page } from "@playwright/test"
-import { IProperty } from "../../config/interfaces"
+import { Country, IProperty } from "../../config/interfaces"
 
 class PropiertiesPage {
     readonly page: Page
     property: IProperty
-
-    constructor(page: Page, property: IProperty) {
+    country: Country
+    constructor(page: Page, property: IProperty, country: Country) {
         this.page = page
         this.property = property
+        this.country = country
     }
 
     public get newPropertyButton() {
@@ -17,7 +18,7 @@ class PropiertiesPage {
     public get clientSelect() {
         return this.page.locator('[placeholder="Seleccionar cliente"]')
     }
-
+    
     public get clientSelectOption() {
         // TODO: replace with correct selector
         let nth = 1
@@ -33,16 +34,8 @@ class PropiertiesPage {
         return this.page.locator('[placeholder="Seleccionar"]')
     }
 
-    public get aali1Option() {
-        return this.page.locator('text=Tarija')
-    }
-
-    public get aali2Option() {
-        return this.page.locator('text=Cercado')
-    }
-
-    public get aali3Option() {
-        return this.page.locator('text=Tarija').nth(1)
+    aaliOption(aaliIndex: number, nthIndex: number) {
+        return this.page.locator(`text=${this.country.aalisOptions[aaliIndex]}`).nth(nthIndex)
     }
 
     public get propertyTypeOption() {

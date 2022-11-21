@@ -2,7 +2,7 @@ import { IClient } from '../../config/interfaces';
 import AdminNavbarPage, { Pages } from '../pages/admin-navbar-page';
 import ClientsPage from '../pages/clients-page';
 
-async function createClient (clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage) {
+async function createClient(clientsPage: ClientsPage, clientsNavBarPage: AdminNavbarPage) {
   await clientsNavBarPage.selector.click()
   await clientsPage.newClientButton.click()
 
@@ -13,8 +13,8 @@ async function createClient (clientsPage: ClientsPage, clientsNavBarPage: AdminN
   await clientsPage.clientBirthdateInput.fill(clientsPage.client.birthday);
   await clientsPage.clientPassportInput.fill(clientsPage.client.pasport);
   await clientsPage.clientCountryInput.selectOption(clientsPage.client.pasportCountry);
-  await clientsPage.clientCIInput.fill(clientsPage.client.identificationCard);
-  await clientsPage.clientNITInput.fill(clientsPage.client.nit);
+  await clientsPage.clientNationalIdInput.fill(clientsPage.client.identificationCard);
+  await clientsPage.clientTaxIdInput.fill(clientsPage.client.nit);
   await clientsPage.createClientSubmitButton.click()
 
   await clientsPage.closeButton.click();

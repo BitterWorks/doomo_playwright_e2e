@@ -13,8 +13,9 @@ async function editClient(clientsPage: ClientsPage, clientsNavBarPage: AdminNavb
   await editedClientsPage.clientBirthdateInput.fill(editedClientsPage.client.birthday);
   await editedClientsPage.clientPassportInput.fill(editedClientsPage.client.pasport);
   await editedClientsPage.clientCountryInput.selectOption(editedClientsPage.client.pasportCountry);
-  await editedClientsPage.clientCIInput.fill(editedClientsPage.client.identificationCard);
-  await editedClientsPage.clientNITInput.fill(editedClientsPage.client.nit);
+  // TODO validar estos campos (dependen del pais de la concession)
+  // await editedClientsPage.clientCIInput.fill(editedClientsPage.client.identificationCard);
+  // await editedClientsPage.clientNITInput.fill(editedClientsPage.client.nit);
 
   // Click text=Actualizar cliente
   await editedClientsPage.editClientSubmitButton.click();

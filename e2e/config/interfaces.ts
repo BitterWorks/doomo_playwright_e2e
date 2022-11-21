@@ -1,3 +1,13 @@
+interface Countries {
+    [id: string] : Country
+}
+
+interface Country {
+    nationalIdName: string,
+    taxIdName: string,
+    aalisOptions: string[]
+}
+
 interface IProfile {
     firstname: string
     lastname: string
@@ -34,15 +44,15 @@ interface IListing {
 }
 
 export enum PropertyTypes {
-    TERRENO= "Terreno",
-    CAMPO= "Campo",
-    COCHERA="Cochera",
-    OFICINA="Oficina",
-    CASA="Casa",
-    DEPARTAMENTO="Departamento",
-    LOCAL_COMERCIAL="Local Comercial",
-    OTRO="Otro"
+    TERRENO = "Terreno",
+    CAMPO = "Campo",
+    COCHERA = "Cochera",
+    OFICINA = "Oficina",
+    CASA = "Casa",
+    DEPARTAMENTO = "Departamento",
+    LOCAL_COMERCIAL = "Local Comercial",
+    OTRO = "Otro"
 }
 
 
-export { IClient, IProperty, IListing, IProfile }
+export { IClient, IProperty, IListing, IProfile, Country, Countries }

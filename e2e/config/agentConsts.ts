@@ -1,6 +1,7 @@
 import { IClient, IListing, IProfile, IProperty, PropertyTypes } from "./interfaces"
 
 
+
 const profile: IProfile = {
     firstname: "AgentName",
     lastname: "AgentLastname",
@@ -10,8 +11,8 @@ const profile: IProfile = {
 const clientExample: IClient = {
     firstname: 'Agent',
     lastname: 'Client',
-    email: 'agent@test.com',
-    phone: '111111',
+    email: 'agent2py@test.com',
+    phone: '1111112',
     birthday: '1999-07-07',
     pasport: '222222',
     pasportCountry: 'BO',
@@ -22,8 +23,8 @@ const clientExample: IClient = {
 const editedClientExample: IClient = {
     firstname: 'Agent',
     lastname: 'Client',
-    email: 'agent@test.com',
-    phone: '112222',
+    email: 'agent2py@test.com',
+    phone: '1122223',
     birthday: '1999-07-09',
     pasport: '223333',
     pasportCountry: 'BO',
