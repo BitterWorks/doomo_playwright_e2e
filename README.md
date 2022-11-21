@@ -1,3 +1,13 @@
+Test Order
+
+```
+npx playwright test login.spec.ts --headed
+npx playwright test editProfile.spec.ts --headed
+npx playwright test generalFlow.spec.ts --headed
+npx playwright test validation.spec.ts --headed
+npx playwright test delete.spec.ts --headed
+```
+
 Run all tests
 
 ```bash
@@ -34,13 +44,13 @@ npx playwright codegen staging.doomobr.com
 CODEGEN save credentials
 
 ```
-npx playwright codegen localhost:3000 --save-storage=auth.json
+npx playwright codegen localhost:3000/admin --save-storage=authAgent.json
 ```
 
 CODEGEN load credentials
 
 ```
-npx playwright codegen localhost:3000 --load-storage=auth.json
+npx playwright codegen localhost:3000/admin --load-storage=authAgent.json
 ```
 
 

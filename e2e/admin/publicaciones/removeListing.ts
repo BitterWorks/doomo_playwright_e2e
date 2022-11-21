@@ -1,5 +1,5 @@
-import { expect, Page } from '@playwright/test';
-import { IListing } from '../interfaces';
+import { Page } from '@playwright/test';
+import { IListing } from '../../config/interfaces';
 
 async function editListing(page: Page, baseUrl: string, listing: IListing) {
 

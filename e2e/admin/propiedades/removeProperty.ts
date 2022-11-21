@@ -1,5 +1,5 @@
 import test, { expect, Page } from '@playwright/test';
-import { IClient, IProperty } from '../interfaces';
+import { IClient, IProperty } from '../../config/interfaces';
 
 async function editProperty(page: Page, baseUrl: string, property: IProperty) {
     // Go to http://localhost:3000/admin

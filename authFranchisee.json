@@ -1,0 +1,29 @@
+{
+  "cookies": [
+    {
+      "name": "__cf_bm",
+      "value": "X0BRQIQUp7qpFAN3nAC7OxPuKF3qDlXXBWzJgRRhmag-1669041713-0-AbhAjcxuqoFXSIvYqpZ9mT7XS4qonaPAXTV+EOY1P8yaEqeE1lHWY/BcBmAFn7MPssAz/Ijq4NHFxu593jvUgn4=",
+      "domain": ".pixabay.com",
+      "path": "/",
+      "expires": 1669043513.215432,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://localhost:3000",
+      "localStorage": [
+        {
+          "name": "auth-token",
+          "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NjkwNDIwMDcsIm9yaWdJYXQiOjE2NjkwNDE3MDcsImVtYWlsIjoiZnJhbmNoaXNlZS5weUBkb29tb2JyLmNvbSJ9.NcxzJZV5xm8rRuHRZVzAiS66wEuTOSe1VV9T_tWHOIc"
+        },
+        {
+          "name": "country",
+          "value": "{\"name\":\"Paraguay\",\"code\":\"PY\"}"
+        }
+      ]
+    }
+  ]
+}
